@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>过渡</title>
+		<style type="text/css">
+			.box{
+				width: 200px;
+				height: 200px;
+				background: red;
+				transition: all 3s linear 1s;
+			}
+			/* all 所有属性
+			   3s  动画时间
+			   linear 匀速 ease逐渐变慢 ease-in 加速 ease-out 减速 ease-in-out 先加速后减速
+			   2s 延迟
+			 */
+			.box:hover{
+				width: 600px;
+				height: 600px;
+				background: yellow;
+			}
+			.box1{
+				width: 200px;
+				height: 50px;
+				background: yellow;
+				border: 1px solid gray;
+			}
+			.box1 ul{
+				/* display: none; */
+				margin-top: 50px;
+				height: 0px;
+				overflow: hidden;
+				transition: all 1s; 
+			}
+			.box1:hover ul{
+				height: 200px;
+				/* display: block; */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		<div class="box1">我的菜单
+			<ul>
+				<li>1111</li>
+				<li>2222</li>
+				<li>3333</li>
+				<li>4444</li>
+				<li>5555</li>
+			</ul>
+		</div>
+	</body>
+</html>

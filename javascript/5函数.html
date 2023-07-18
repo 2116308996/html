@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>aaa</title>
+		<style type="text/css">
+			
+		</style>
+		<script type="text/javascript">
+		// console.log("ad");
+			 // var fun1 = new Function('console.log("asd");');
+			function fun(n){
+				return 2*n;
+			}
+			// fun1();
+			// prompt();
+		console.log(fun(2)); 
+		(function(){
+			alert("我是匿名函数");
+			d=35;
+		})();
+		var obj={
+			name:"孙悟空",
+			age:18,
+			show:function(){
+			console.log(this.name);
+		},
+		}
+		//   obj.df="sad";
+		// obj.show();
+		// console.log(obj.df);
+		// 枚举对象中的属性
+		for(var i in obj){
+			console.log(obj[i]);
+		}
+		// console.log(d);
+		// this 以函数形式调用，this是window
+		// 以对象方发的形式调用，this是该对象
+		function funn(){
+			console.log(this.name);
+		}
+		obj.sex=funn;
+		obj.sex();
+		// obj instanceof creat
+		// 使用instanceof检查一个对象是否是一个实列类
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

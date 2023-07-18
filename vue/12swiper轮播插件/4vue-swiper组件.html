@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../node_modules/swiper/swiper-bundle.min.css"/>
+		<script src="../node_modules/swiper/swiper-bundle.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./swiper-bar.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.zhuhui{
+				height: 500px;
+				width: 800px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>导航栏</header>
+		<div id="box">
+			<swiper-bar :key="datalist.length" class="zhuhui">
+				<swiper-item  v-for="item in datalist" :key="item">
+						<img :src="item" style="height: 500px;" alt="">
+				</swiper-item>
+			</swiper-bar>
+			
+		</div>
+		
+		<footer>底部内容</footer>
+		<script type="text/javascript">
+		   
+		   var vm= new Vue({
+				el:"#box",
+				data:{
+					datalist:[]
+				},
+				mounted() {
+					setTimeout(()=>{
+						this.datalist=["../../image/1.jpg","../../image/2.jpg","../../image/3.jpg"];
+					},2000)
+				},
+				updated() {
+					
+				}
+			})		
+		</script>
+	</body>
+</html>

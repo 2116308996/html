@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#over{
+				background-color: rgba(0,0,0,0.6);
+				width: 100%;
+				margin: auto;
+				position: fixed;
+				top: 0;
+				bottom: 0;
+			}
+			#box1{
+				width: 350px;
+				height: 300px;
+				margin: 0 auto;
+				border: 1px solid black;
+				text-align: center; */
+				font-size: 30px;
+				background-color: white;
+			}
+			#box1 input{
+				height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<button type="button"  @click="btn1" style="font-size: 30px;">show</button>
+			<div id="over" v-show="isShow" @click.self="isShow=false">
+				<div id="box1">
+				    <br>
+				    <p>账号：<input type="text" name="" id="username" value="" /></p>
+				    <br><br>
+				    <p>密码：<input type="text" name="" id="password" value="" /></p>
+				    <br><br>
+				    <button type="button" style="font-size: 20px;" @click="btn2">登录</button>
+			    </div>
+			</div>
+			
+		</div>
+		<script type="text/javascript">
+		    
+			new Vue({
+				el:"#box",
+				data:{
+					isShow:false,
+				},
+				methods:{
+					btn1(){
+						this.isShow=!this.isShow;
+					},
+					btn2(){
+						this.isShow=!this.isShow;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

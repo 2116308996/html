@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+		    *{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				margin: 0 auto;
+				border: 1px solid black;
+				width: 700px;
+				height: 300px;
+			}
+			.box>div{
+				float: left;
+				width: 400px;
+				height: 300px;
+				box-sizing: border-box;
+				padding: 10px;
+				border: 1px solid black;
+			}
+			.box .right{
+				width: 300px;
+			}
+			.right input{
+				width: 280px;
+				margin: 5px 0;
+			}
+			.right input:hover{
+				background: linear-gradient(gainsboro,skyblue);
+			}
+			.box ul{
+				list-style: none;
+				height: 50px;
+				margin-left: 0;
+				
+			}
+			.box ul li{
+				float: left;
+				height: 30px;
+				width: 50px;
+				background-color: #08C631;
+				margin: 0 5px;
+				line-height: 30px;
+				text-align: center;
+			}
+		</style>
+		<script type="text/javascript">
+		    function myClick(btn,fun){
+				var btn=document.getElementById(btn);
+				btn.onclick=fun;
+			};
+			
+			window.onload=function(){
+				var btn1=document.getElementById("btn1");
+				btn1.onclick=function(){
+					var gz=document.createElement("li");
+					gz.innerHTML="广州";
+					// appendChild()
+					// 向父节点添加子节点 父节点.appendChild(子节点)
+					document.getElementById("city").appendChild(gz);
+				}
+				
+				myClick("btn2",function(){
+					var gz=document.createElement("li");
+					gz.innerHTML="广州";
+					// insertBefore()
+					// 在指定节点前插入新节点
+					// 用法 父节点.insertBefore(新节点,旧节点)
+					var city=document.getElementById("city");
+					var bj=document.getElementById("bj");
+					
+					city.insertBefore(gz,bj);
+				});
+				
+				myClick("btn3",function(){
+					var gz=document.createElement("li");
+					gz.innerHTML="广州";
+					var city=document.getElementById("city");
+					var bj=document.getElementById("bj");
+					// replaceChild()
+					// 把指定节点替换为新节点
+					// 用法 父节点.replaceChild(新节点,旧节点)
+					city.replaceChild(gz,bj);
+				});
+				
+				myClick("btn4",function(){
+					var city=document.getElementById("city");
+					var bj=document.getElementById("bj");
+					// removeChild()
+					// 删除子节点
+					// 用法 父节点.removeChild(子节点)
+					// 或者bj.parentNode.removeChild(bj);
+					city.removeChild(bj);
+				}
+				);
+				
+				myClick("btn5",function(){
+					var city=document.getElementById("city");
+					alert(city.innerHTML);
+				});
+				
+				myClick("btn6",function(){
+					var bj=document.getElementById("bj");
+					bj.innerHTML="邵阳";
+				});
+				
+				myClick("btn7",function(){
+					var city=document.getElementById("city");
+					// 使用innerHTML可以实现DOM的曾删改
+					// 缺点：innerHTML相当于把原来的全部删除替换为新的
+					city.innerHTML +="<li>广州</li>";
+				});
+			};
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<div class="left">
+				<div>你喜欢哪个城市</div>
+				<ul id="city">
+					<li id="bj">北京</li>
+					<li>上海</li>
+					<li>东京</li>
+					<li>首尔</li>
+				</ul>
+			</div>
+			<div class="right">
+				<input type="button" name="" id="btn1" value="创建一个“广州”节点，添加到#city下" />
+				<input type="button" name="" id="btn2" value="将“广州”节点插入到#bj前面" />
+				<input type="button" name="" id="btn3" value="使用“广州”节点替换#bj节点" />
+				<input type="button" name="" id="btn4" value="删除#bj节点" />
+				<input type="button" name="" id="btn5" value="读取#city内的html代码" />
+				<input type="button" name="" id="btn6" value="设置#bj内的html代码" />
+				<input type="button" name="" id="btn7" value="向city中添加广州" />
+			</div>
+		</div>
+	</body>
+</html>

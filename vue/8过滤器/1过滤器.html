@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+			}
+		</style>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../axios.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box"> 
+			<button type="button" @click="handle">axios</button>
+			<ul>
+				<li v-for="(item,index) in datalist" :key="item.filmId">
+					<div>{{item.name}}</div>
+					{{item.poster}}
+				    <img :src="item.poster | imgFilter" alt="">
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+		// imgFilter  加工厂
+		    Vue.filter("imgFilter",(url)=>{
+				return url
+			})
+			new Vue({
+				el:"#box",
+				data:{
+				    datalist:[]	
+				},
+				methods:{
+					handle(){
+						axios.get("../7fetch和axios/maizuo.json").then(res=>{
+							this.datalist=res.data.data.films;
+						}
+						);
+					}
+				}
+			})
+			// axios.post("https*****","name=kerwin&age=100")
+			// axios.post("http*******","name:"kerwin",age:100")
+		</script>
+	</body>
+</html>

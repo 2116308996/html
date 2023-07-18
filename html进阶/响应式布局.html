@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>响应式布局</title>
+		<style type="text/css">
+		/* 768
+		   1024 768 450
+		 */
+		    *{
+				margin: 0;
+				padding: 0;
+			}
+			html,body{
+				height: 100%;
+			}
+			body{
+				display: flex;
+				flex-direction: column;
+			}
+			header div{
+				float: left;
+			}
+			img{
+				width: 100%;
+			}
+			header div{
+				box-sizing: border-box;
+				border: 1px solid gainsboro;
+				padding: 5px;
+			}
+			section{
+				column-gap: 20px;
+			}
+			section>div{
+				break-inside: avoid;
+				box-sizing: border-box;
+				padding: 5px;
+				border: 1px solid gainsboro;
+				margin-bottom: 10px;
+				box-shadow: 0 0 5px #000000;
+			}
+			@media screen and (min-width:1024px){
+				header div{
+					width:25%;
+					height: 100%;
+				}
+				header div:nth-child(1){
+					width: 50%;
+				}
+				section{
+					column-count: 4;
+				}
+			} 
+			@media screen and (max-width:1024px){
+				header div{
+					width: 50%;
+				}
+				header div:nth-child(1){
+					width: 100%;
+				}
+				
+			} 
+			@media screen and (min-width:768px) and (max-width:1024px){
+				section{
+					column-count: 3;
+				}
+			}
+			@media screen and (min-width:450px) and (max-width:768px) {
+				section{
+					column-count: 2;
+				}
+			}
+			@media screen and (max-width:450px) {
+				section{
+					column-count: 1;
+				}
+			}
+			/* 竖屏 */
+			@media screen and (orientation:portrait) {
+				
+			}
+			/* 横屏 */
+			@media screen and (orientation:landscape) {
+				
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div>
+				<img src="../image/7.jpg" alt="">
+			</div>
+			<div>
+				<img src="../image/8.jpg" alt="">
+			</div>
+			<div>
+				<img src="../image/8.jpg" alt="">
+			</div>	
+		</header>
+		<section>
+			<div>
+				<img src="../image/1.jpg" alt="">
+				<p>新年快乐</p>
+				<p>2022-1-26</p>
+			</div>
+			<div>
+				<img src="../image/2.jpg" alt="">
+				<p>新年快乐</p>
+				<p>2022-1-26</p>
+			</div>
+			<div>
+				<img src="../image/3.jpg" alt="">
+				<p>新年快乐</p>
+				<p>2022-1-26</p>
+			</div>
+			<div>
+				<img src="../image/4.jpg" alt="">
+				<p>新年快乐</p>
+				<p>2022-1-26</p>
+			</div>
+			<div>
+				<img src="../image/5.jpg" alt="">
+				<p>新年快乐</p>
+				<p>2022-1-26</p>
+			</div>
+			<div>
+				<img src="../image/6.jpg" alt="">
+				<p>新年快乐</p>
+				<p>2022-1-26</p>
+			</div>
+			<div>
+				<img src="../image/7.jpg" alt="">
+				<p>新年快乐</p>
+				<p>2022-1-26</p>
+			</div>
+			<div>
+				<img src="../image/8.jpg" alt="">
+				<p>新年快乐</p>
+				<p>2022-1-26</p>
+			</div>
+			<div>
+				<img src="../image/12.jpg" alt="">
+				<p>新年快乐</p>
+				<p>2022-1-26</p>
+			</div>
+			<div>
+				<img src="../image/13.jpg" alt="">
+				<p>新年快乐</p>
+				<p>2022-1-26</p>
+			</div>
+		</section>
+	</body>
+</html>

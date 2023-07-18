@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box">
+			{{myname}}{{globalName}}
+			<button type="button" @click="changeuser">按钮</button>
+			<ul>
+				<li v-for="item in list">{{item}}</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+		    localStorage.setItem("user",123);
+			var vm=new Vue({
+				
+				// 创建阶段
+				
+				
+				el:"#box",
+				data:{
+					myname:"zhuhui",
+					list:[]
+				},
+				methods:{
+					changeuser(){
+						this.myname="小明";
+						localStorage.setItem("user",2233);
+					}
+				},
+				beforeCreate() {
+					console.log("beforeCreate",this.myname);
+				},
+				created() {
+					   this.myname=this.myname+"11111"
+					   //在data中没有创建该变量则 不会被拦截
+					   // 否则，会被拦截，想到与赋值
+					   this.globalName="this可以直接访问的属性值"
+					   this.user=localStorage.getItem("user");
+					console.log("created","状态的初始化或者挂载到当前实例的一些属性",this.user);;
+				},
+				beforeMount() {
+					console.log(document.getElementById("box").innerHTML)
+					//模板解析之前最后一次修改模板节点
+				},
+				mounted() {
+					console.log("拿到解析后DOM节点",document.getElementById("box").innerHTML)
+					// 依赖于dom创建之后。才进行初始化工作的插件 （轮播插件）
+					// 订阅 bus.$on
+					// 发送ajax
+					
+					setTimeout(()=>{
+						 this.list=["11111","222222","333333"];
+						 // 虚拟DOM创建，diff对比 ，状态立即更新，但是dom异步更新所有长度为0
+						 console.log(document.getElementsByTagName("li").length)//长度为0
+					},2000)
+					
+					// onresize浏览器页面改变时触发
+					window.onresize=()=>{
+						console.log("resize");
+					}
+				},
+				
+				
+				// 更新阶段
+				
+				beforeUpdate() {
+					console.log("beforeupdate更新之前");
+					console.log(document.getElementsByTagName("li").length)//长度为0
+				},
+				updated() {
+					console.log("update更新完成");
+					console.log(document.getElementsByTagName("li").length)//长度为3
+				}
+				
+			})
+		</script>
+	</body>
+</html>

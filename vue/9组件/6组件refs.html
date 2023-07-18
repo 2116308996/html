@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<div id="box">
+			账号<input type="text" ref="mytest" name="" id="" value="" />
+			<br>
+			密码<input type="password" ref="mypassword" name="" id="" value="" />
+			<br>
+			<div ref="mydiv">1111111</div>
+			<button type="button" @click="handleAdd">add</button>
+			<child ref="mychild"></child>
+		</div>
+		<script type="text/javascript">
+		    /*
+			ref 绑定dom节点，拿到的就是dom对象
+			ref 绑定在组件上，拿到的是组件对象
+			*/
+		   Vue.component("child",{
+			   template:`
+			   <div>child--{{data}}</div>
+			   `,
+			   data() {
+			   	    return{
+						data:123,
+					}
+			   }
+		   })
+			new Vue({
+				el:"#box",
+				data:{
+					
+				},
+				methods:{
+					handleAdd(){
+						console.log(this.$refs.mychild.data);
+						this.$refs.mychild.data="aaaa";
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

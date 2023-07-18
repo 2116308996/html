@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 500px;
+				height: 300px;
+				margin: 0 auto;
+				border: 1px solid black;
+				padding: 5px;
+				text-align: center;
+			}
+			img{
+				height: 300px;	
+			}
+		</style>
+		<script type="text/javascript">
+		    window.onload=function(){
+				var btn1=document.getElementById("btn1");
+				var imgarr=["../image/19.jpg","../image/20.jpg","../image/21.jpg","../image/22.jpg","../image/23.jpg"];
+		        var imgs=document.getElementById("imgs");
+				var timer;
+				btn1.onclick=function(){
+				var index=1;
+				clearInterval(timer);
+		    	timer=setInterval(function(){
+			    	imgs.src=imgarr[index++];
+			    	if(index==imgarr.length-1){
+			    		index=0;
+			    	}
+			    },1000);
+				};
+				var btn2=document.getElementById("btn2");
+				btn2.onclick=function(){
+					clearInterval(timer);
+				};
+			};
+			
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<img src="../image/19.jpg" alt="" id="imgs">
+			<br /><br />
+			<button type="button" id="btn1">开始轮播</button>
+			<button type="button" id="btn2">停止轮播</button>
+		</div>
+	</body>
+</html>

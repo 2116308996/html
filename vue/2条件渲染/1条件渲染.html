@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div v-if="isCreated">11111</div>
+			<div v-if="!isCreated">22222</div>
+			<div>33333</div>
+			<button type="button" @click="change()">按钮</button>
+			<h1>所有订单</h1>
+			<ul>
+				<li v-for="(item,index) in datalist" :key="item.id">{{item.title}}---
+				<span v-if="item.state==0">
+					未支付
+				</span>
+				<span v-else-if="item.state==1">
+					待发货
+				</span>
+				<span v-else-if="item.state==2">
+					已发货
+				</span>
+				<span v-else="item.state==3">
+					已完成
+				</span>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el:"#box",
+				data:{
+					isCreated:true,
+					datalist:[{ id:1,
+						        title:"1111",
+						        state:0  //"未支付"
+					       },
+					        {   
+								id:2,
+					        	title:"2222",
+					        	state:1 //"待发货"
+					        },
+							{   
+								id:3,
+								title:"3333",
+								state:2 //"已发货"
+							},
+							{   
+								id:4,
+								title:"4444",
+								state:3   // "已完成"
+							},
+					]
+				},
+				methods:{
+					change(){
+						this.isCreated=!this.isCreated;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+		<script type="text/javascript">
+		// JSON
+		 /* 对象
+		    {}
+		  数组
+		  []
+		  JSON--->js
+		  JSON.parse()可以将JSON转换为js；
+		  js--->JSON
+		  JSON.stringify();
+		  
+		  eval()
+		  用来执行字符串形式的代码
+		  如果使用eval执行的字符串中有{}，他会将{}当成代码块
+		  解决办法eava("("+jsonstr+")")
+		  var str='{name:"孙悟空",age:18,gender:"男"}';
+		  var str="alert('hello')";
+		  */
+		    var jsonobj='{"name":"孙悟空","age":18,"gender":"男"}';
+		    var jsonarr='[1,2,3,"sadas",true]';
+		    var jsonobjarr='[{"name":"孙悟空","age":18,"gender":"男"},{"name":"asdas"}]';
+			var obj={name:"孙悟空",
+			         age:18,
+					 gender:"男"
+			};
+			console.log(eval("("+jsonobj+")"));
+			console.log(JSON.stringify(obj)); 
+			console.log(JSON.parse(jsonobjarr)[0]); 
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

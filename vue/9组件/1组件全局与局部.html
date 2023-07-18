@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box">
+			<navbar></navbar>
+			<child></child>
+		</div>
+		
+		<script type="text/javascript">
+		// 定义一个全局组件
+		/*
+		this.$root.data 访问根组件
+		this.$parent.data 访问父组件
+		this.#refs.data 通过给组件绑定ref 拿到组件对象
+		*/ 
+		Vue.component("navbar",{
+			template:`<div style='background-color: yellow;border:3px solid black'>
+			<button @click="handleleft">left</button>
+			猫眼电影{{mytest}}
+			<button @click="handleright">right</button>
+			<child></child>
+			<zhunavbar></zhunavbar>
+			</div>`,
+			data() {
+				return{
+					mytest:"navbarname"
+				}
+			},
+			methods:{
+				handleleft(){
+					console.log("left")
+				},
+				handleright(){
+					console.log("right")
+				}
+			},
+			computed:{},
+			watch:{},
+			components:{
+				"zhunavbar":{
+					template:`<div style='background-color: blue;'>zhunavbar{{myname}}</div>`,
+					data() {
+						return{
+							myname:"zhunavbarname",
+						}
+					}
+				}
+			}
+		})
+		Vue.component("child",{
+			template:`
+			<div style='background-color: red;'>child</div>
+			`
+		})
+			new Vue({
+				el:"#box",
+				data:{
+					
+				},
+				methods:{
+
+				},
+				computed:{
+					
+				},
+				watch:{
+					
+				},
+				components:{
+					
+				}
+				
+				
+			})
+		</script>
+	</body>
+</html>

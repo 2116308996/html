@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DOM</title>
+		<style type="text/css">
+			
+		</style>
+	     <script type="text/javascript">
+		 // onload事件 会再整个页面加载完成后执行
+	     	window.onload = function() {
+	     		console.log("加载完成");
+	     	};
+			
+	     </script> 
+	</head> 
+	<body>
+		<div>1111</div>
+		<div class="box1">2222<div>box1 div</div><div>sadas</div></div>
+		<div id="box">3333</div>
+		<div>4444</div>
+		<input type="button" name="" id="but1" value="按钮" />
+		<script type="text/javascript">
+			var box=document.getElementById("box");
+			box.innerHTML="33";
+			// function fun(){
+			// 	alert("asda");
+			// }
+			box=null; 
+			var btn=document.getElementById("but1");
+			// onclick单击事件
+			btn.onclick=function(){
+				alert("点我干嘛");
+			};
+			btn=null;
+			// console.log(box.innerHTML); 
+			
+			
+		    var body=document.body;
+			var html=document.documentElement;
+			console.log(html);
+			var all=document.all;
+			console.log(all);
+			// 缺点：该方法只能返回唯一一个元素
+			var div=document.querySelector(".box1 div");
+			// 该方法可以一次查询多个返回到数组中
+			var divs=document.querySelectorAll(".box1 div");
+			console.log(divs[1].innerHTML);
+		</script> 
+	</body>
+</html>

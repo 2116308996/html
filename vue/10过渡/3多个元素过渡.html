@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			@keyframes mymove{
+				0%{opacity: 0;
+				transform: translateX(100px);
+				}
+				100%{
+					opacity: 1;
+					transform: translateX(0px);
+				}
+			}
+			.zhuhui-enter-active{
+				animation: mymove 1s linear ;
+			}
+			.zhuhui-leave-active{
+				animation: mymove 1s linear reverse;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<button @click="isShow=!isShow">change</button>
+			
+			<!-- <transition enter-active-class="zhuhui-enter" leave-active-class="zhuhui-leave">
+				<div v-show="isShow">11111111</div>
+			</transition> -->
+			
+			<!-- 要简写的话 class名要取成  name-enter-active和name-leave-active-->
+			<transition name="zhuhui" mode="out-in"> 
+				<div v-if="isShow" key="1">11111111</div>
+				<div v-else key="2">22222222</div>
+			</transition>
+		</div>
+		<script type="text/javascript">
+			
+			new Vue({
+				el:"#box",
+				data:{
+					isShow:true
+				}
+			})
+		</script>
+	</body>
+</html>

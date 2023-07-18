@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表单</title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<form action="安利首页.html" method="get">
+			用户信息：<input type="text" name="username" id="" value="" placeholder="请输入用户名" title=""/>
+			<br>
+			密码：<input type="password" name="userpassword" placeholder="请输入密码"/>
+			<br>
+			
+			<div>对京东的满意程度</div>
+			<input type="radio" name="a1" id="b1" value="满意" />
+			<label for="b1">满意</label><br>
+			<input type="radio" name="a1" id="b2" value="不满意" />
+			<label for="b2">不满意</label><br>
+			<input type="radio" name="a1" id="b3" value="很满意" checked="checked" />
+			<label for="b3">很满意</label><br>
+			
+			<div>兴趣爱好</div>
+			<input type="checkbox" name="a2" id="b4" value="抽烟" />
+			<label for="b4">抽烟</label>
+			<input type="checkbox" name="a2" id="b5" value="喝酒" checked/>
+			<label for="b5">喝酒</label>
+			<input type="checkbox" name="a2" id="b6" value="打牌" />
+			<label for="b6">打牌</label>
+			
+			<div>上传文件</div>
+			<div><input type="file" name="a4" id="" value="" /></div>
+			
+			<div>图片代替提交按钮(input type="submit" )</div>
+			<input src="image/8.jpg" type="image" width="100px" name="" id="" value="" />
+			
+			<div>
+				隐藏按钮
+				<input type="hidden" name="" id="" value="带给后端个人信息" />
+			</div>
+			
+			<div>
+				<div>禁用disabled，只读readonly</div>
+				<div>
+					<button type="button" disabled="disabled">asdfa</button>
+					<input type="text" readonly="readonly" name="" id="" value="465" />
+				</div>
+			</div>
+			<br>
+			
+			<h3>下拉菜单</h3>
+		<div>
+			<div>你的收货地址</div>
+			<select size="1" multiple="multiple" name="a5">
+				<option value ="湖南">湖南</option>
+				<option value ="湖北">湖北</option>
+				<option value ="福建">福建</option>
+				<option value ="北京">北京</option>
+				<option value ="河北" selected="selected">河北</option>
+			</select>
+		</div>
+			<!-- resize:none固定大小 -->
+			<textarea rows="5" cols="25" name="a6" style="resize: none;"></textarea>
+			
+			<br>颜色选择<input type="color" name="color" id="" value="" />
+			邮箱<input type="email" name="email" id="" value="" />
+			网址<input type="url" name="url" id="" value="" />
+			电话号码<input type="tel" name="tel" id="" value="" />
+			<!-- step步长 -->
+			滑块效果<input type="range" name="range" id="" value="0" min="0" max="100" step="10"/>
+			数字类型<input type="number" name="number" id="" value="" min="0" max="100" />
+			搜索<input type="search" name="search" id="" value="" />
+			
+			<!-- autofocus空件自动获得国标焦点，一个页面只能有一个
+			 required验证输入不能为空
+			 Multiple可以输入一个或多个值，每个值用空格隔开
+			 pattern将属性设为某个正则表达式，在提交时检查类容是否符合给定格式
+			 -->
+			<br>
+			<input type="submit" id="" name="a3" value="登录"/>
+			<!-- <br>
+			<button type="submit">登录</button> -->
+			<input type="reset" value="重置" />
+		</form>
+		<fieldset id="" style="width: 200px;">
+			<legend>个人信息</legend>
+			<input type="radio" >我是大帅逼
+			<input type="" name="" id="" value="" />
+			<input type="date" name="" id="" value="" />
+			<input type="month" name="" id="" value="" />
+			<input type="week" name="" id="" value="" />
+			<input type="datetime-local" name="" id="" value="" />
+			<input type="datetime" name="" id="" value="11:56:45" />
+		</fieldset>
+		<script type="text/javascript">
+			var a;
+			
+		</script>
+	</body>
+</html>

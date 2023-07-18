@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+		<script type="text/javascript">
+		    /* 正则表达式
+			var 变量=/正则表达式/匹配模式
+			 i 忽略大小写
+			 g 全局匹配模式
+			 [A-z]任意字母
+			 [0-9]任意数字
+			 a[bde]c 检查是否含有abc,adc,aec
+			 [^ab]除了ab以外
+			 . 表示任意字符除了换行和结束符
+			 \w查找单个字符
+			 \W查找单个非法字符
+			 \d查找数字
+			 \D查找非数字
+			 \s查找空白字符
+			 \S查找非空白字符
+			 \b匹配单词边界
+			 \B匹配非单词边界
+			 \O查找NUL字符
+			 \n查找换行符
+			 \f查找换页符
+			 \r查找回车符
+			 \t查找制表符
+			 \v查找垂直制表符
+			\xxx查找八进制数 xxx规定的字符
+			\xdd查找十六进制数 dd规定的字符
+			\uxxxx查找十六进制数  xxxx规定的Unicode字符
+			 
+			 量词
+			 通过量词设置类容出现的次数
+			 只对前边一个类容起作用
+			 +至少一个 相当于{1,}
+			 *0个或多个      {0,}
+			 ?0个或一个      {0,1}
+			 ^a开头
+			 a$结尾
+			 [a{3}]出现3次a   {1,3}出现1到3次
+			 [a{n}]出现n次a
+			 [(ab){3}]出现ababab
+			 */
+			var reg=new RegExp("ab","i");
+			var reg=/[^ab]/;
+			var str="a";
+			// test()
+			var result= reg.test("abc");
+			var str="12a3s4dds5d6sd789";
+			 result=str.split("d");
+			 reg=/[A-z]/;
+			 result=str.split(reg);
+			 result=result.join("");
+			 result=str.search(/dds|sd/);
+			 // match()可以根据正则表达式，提取字符串中的类容
+			 result=str.match(/[A-z]/gi).join("");
+			 // relpace()可以将字符串中指定的类容替换为新类容
+			 result=str.replace(/d/gi,"");
+			 // str="asfsdfa";
+			 // reg=/^a[\w]*a$/;
+			 // result=reg.test(str);
+			 
+			 // 检测一个字符串是否是一个合法的手机号
+			 str="18476936520";
+			 reg=/^1[3-9][0-9]{9}$/;
+			 result=reg.test(str);
+			 // 检查是否有单词child
+			 reg=/\bchild\b/;
+			 // 去除前后空格
+			 var str="    hello das   ";
+			 reg=/^\s*|\s*$/g;  
+			 result=str.replace(reg,"");
+			 // 邮件的正则
+			 var str="2116308996@qq.com";
+			 reg=/[\w]{3,}(\.[\w]+)*@[A-z0-9]+(\.[A-z]{2,5}){1,2}/; 
+			 result=reg.test(str);
+			console.log(result);
+		</script>
+	</head> 
+	<body>
+	</body>
+</html>

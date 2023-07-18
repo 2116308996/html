@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box1{
+				width: 200px;
+				height: 200px;
+				background-color: yellowgreen;
+			}
+			#span1{
+				background-color: yellow;
+			}
+			#box2{
+				width: 300px;
+				height: 300px;
+				background-color: limegreen;
+			}
+			#box3{
+				width: 200px;
+				height: 200px;
+				background-color: yellow;
+			}
+			#box4{
+				width: 100px;
+				height: 100px;
+				background-color: skyblue;
+			}
+			
+		</style>
+		<script type="text/javascript">
+		// 事件的冒泡（Bubble）
+		// 事件的向上传导
+		// 后代的元素事件触发时，祖先的相同事件也会触发
+		// 在开发中大部分情况冒泡是非常有用的
+		// 如果不希望发生冒泡可以通过事件对象取消冒泡
+			window.onload=function(){
+				var s1=document.getElementById("span1");
+				s1.onclick=function(event){
+					alert("我是span1");
+					// 取消冒泡
+					event.cancelBubble=true;
+					// 取消冒泡其他方法
+					// event.stopPropagation() 取消冒泡
+					// event.preventDefault() 取消默认事件
+				};
+				
+				var box1=document.getElementById("box1");
+				box1.onclick=function(event){
+					alert("我是div1");
+					event.cancelBubble=true;
+				};
+				
+				// document.body.onclick=function(event){
+				// 	alert("我是body");
+				// }
+				
+				// var alla=document.getElementById("ul1").getElementsByTagName("a");
+				// for(var i=0;i<alla.length;i++){
+				// 	alla[i].onclick=function(){
+				// 		alert("as");
+						
+				// 	}
+				// }
+				
+				var btn1=document.getElementById("btn1");
+				var ul1=document.getElementById("ul1");
+				
+				ul1.onclick=function(event){
+					if(event.target.className=="link"){
+						alert(event.target.innerHTML);
+					}
+				};
+				
+				btn1.onclick=function(){
+					var li=document.createElement("li");
+					li.innerHTML="<a href='javascript:;' class='link'>新建的超链接</a>";
+					ul1.appendChild(li);
+				};
+				
+				var btn2=document.getElementById("btn2");
+				// addEventListener
+				// 这个方法可以为元素绑定多个响应函数
+				// 1事件的字符串 不要on
+				// 2回调函数
+				// 3是否在捕获阶段触发事件,一般天false
+				// ie8中使用attachEvent()
+				// 1事件的字符串 要on
+				// 2回调函数 
+				// 后绑定先执行
+				
+				// .all()
+				btn2.addEventListener("click",function(){
+					alert("btn2");
+				},false)
+				btn2.addEventListener("click",function(){
+					alert("btn3");
+				},false)
+				
+				var box2=document.getElementById("box2");
+				var box3=document.getElementById("box3");
+				var box4=document.getElementById("box4");
+				box2.addEventListener("click",function(){
+					alert("box2");
+				},false);
+				box3.addEventListener("click",function(){
+					alert("box3");
+				},false);
+				box4.addEventListener("click",function(){
+					alert("box4");
+				},false);
+			};
+		</script>
+	</head>
+	<body>
+		<div id="box1">
+			我是div
+			<span id="span1">
+				我是span
+			</span>
+		</div>
+		<div>
+			<button type="button" id="btn1">添加超链接</button>
+			<ul id="ul1">
+				<li><a href="javascript:;" class="link">链接一</a></li>
+				<li><a href="javascript:;" class="link">链接二</a></li>
+				<li><a href="javascript:;" class="link">链接三</a></li>
+			</ul>
+			<button id="btn2">登录</button>
+		</div>
+		<div>
+			<div id="box2">
+				<div id="box3">
+					<div id="box4">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>布局命名规范	</title>
+		<style type="text/css">
+			html,body{
+				height: 100%;
+			}
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			header,footer{
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				background: orange;
+			}
+			section{
+				height: calc(100% - 100px);
+			}
+			nav,aside{
+				width: 150px;
+				height: 100%;
+				background: skyblue;
+				float: left;
+			}
+			main{
+				width: calc(100% - 300px);
+				height: 100%;
+				float: left;
+			}
+			.article1{
+				height: 60%;
+			}
+			.article2{
+				height: 40%;
+			}
+		</style>
+	</head>
+	<body>
+		<header>header</header>
+		<section>
+			<nav>
+				<ul>
+					<li>1111</li>
+					<li>2222</li>
+					<li>3333</li>
+					<li>4444</li>
+					<li>5555</li>
+				</ul>
+			</nav>
+			<main>
+				<article class="article1">
+					<header>article header</header>
+					<section></section>
+					<footer>article footer</footer>
+				</article>
+				<article class="article2">
+					<header>article header</header>
+					<section></section>
+					<footer>article footer</footer>
+				</article>
+			</main>
+			<aside>
+				<figure>aside</figure>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing 
+				elit. Ea nulla alias itaque enim vero nihil dolorum
+				 odit commodi omnis quibusdam ratione inventore beatae
+				  nam deleniti ab saepe eos mollitia fugiat.</p>
+			</aside>
+		</section>
+		<footer>footer</footer>
+	</body>
+</html>

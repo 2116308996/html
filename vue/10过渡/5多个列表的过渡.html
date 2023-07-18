@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			@keyframes mymove{
+				0%{opacity: 0;
+				transform: translateX(100px);
+				}
+				100%{
+					opacity: 1;
+					transform: translateX(0px);
+				}
+			}
+			.zhuhui-enter-active{
+				animation: mymove 0.5s linear ;
+			}
+			.zhuhui-leave-active{
+				animation: mymove 0.5s linear reverse;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<input v-model="message" /><button type="button" @click="add()">add</button>
+				<!-- transition-group会实例化成一个标签 transition不会-->
+				<transition-group name="zhuhui" tag="ul" v-show="list.length">
+					<li v-for="(data,index) in list" :key="data">{{data}}
+					    <button type="button" @click="del(index)">del</button>
+					</li>
+				</transition-group>
+			<div v-show="!list.length">待办事项空空如也</div>
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el:"#box",
+				data:{
+					list:["aaaaa","bbbbb","cccc"],
+					message:"das",
+				},
+				methods:{
+					add(){
+						this.list.push(this.message);
+						this.message="";
+					},
+					del(index){
+					    this.list.splice(index,1);
+					}
+				
+				},
+			})
+		</script>
+	</body>
+</html>

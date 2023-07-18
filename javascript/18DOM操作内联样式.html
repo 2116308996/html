@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				margin: 0 auto;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var btn1=document.getElementById("btn1");
+				btn1.onclick=function(){
+					var box=document.getElementById("box");
+					// 元素.style.样式名=样式值
+					// 如果css样式中含有-
+					// 如background-color 改用驼峰命名
+					// backgroundColor
+				    box.style.width="300px";
+				    box.style.backgroundColor="yellow";
+				};
+				
+				var btn2=document.getElementById("btn2");
+				btn2.onclick=function(){
+					var box=document.getElementById("box");
+					// 获取元素当前样式
+					// 元素.currentStyle.样式名
+					// 只有IE浏览器支持
+					// 其他浏览器可以用getComputedstyle()
+					// 需要两个参数
+					//        第一个，要获取样式的元素
+				    //        第二个，可以传递一个伪元素，一般传null
+					// alert(box.currentStyle.width);
+					var obj=getComputedStyle(box,null);
+					alert(obj.margin);
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<input type="button" name="" id="btn1" value="点我一下" />
+		<input type="button" name="" id="btn2" value="获取样式" />
+		<div id="box"></div>
+	</body>
+</html>

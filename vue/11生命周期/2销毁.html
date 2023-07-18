@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box">
+			<child v-if="isCreated"></child>
+		</div>
+		<script type="text/javascript">
+		    Vue.component("child",{
+				data() {
+					return{
+						time:1000
+					}
+				},
+				created() {
+					this.id=null
+				},
+				mounted() {
+					this.id=setInterval(()=>{
+						this.time--
+					},1000)
+					window.onresize=()=>{
+						console.log("resize");
+					}
+				},
+				template:`
+				<div>
+				    抢购倒计时
+					<div>{{time}}</div>
+				</div>
+				`,
+				updated() {
+					
+				},
+				// 要销毁之前
+				beforeDestroy() {
+					console.log("清除定时器，事件解绑")
+					clearInterval(this.id);
+					window.onresize=null;
+				},
+				// 销毁之后
+				destroyed() {
+					
+				}
+			})
+			var vm=new Vue({
+				el:"#box",
+				data:{
+					isCreated:true
+				}
+			})
+		</script>
+	</body>
+</html>

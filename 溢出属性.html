@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>溢出属性</title>
+		<link rel="stylesheet" href="">
+		<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+			.box0{
+				width: 620px;
+				height: 400px;
+				background-color: #00FFFF;
+				margin: 0 auto;
+				overflow: auto;
+			}
+			div div{
+				background-color: #FF0000;
+				width: 180px;
+				height: 150px;
+				margin: 10px;
+				float: left;
+			}
+			div div div{
+				width: 180px;
+				height: 120px;
+				background-color: #808080;
+				margin: 0;
+			}
+			div div:hover div{
+				background-color: #0000FF;
+				color: #F0F8FF;
+			}
+			div div:hover{
+				background-color: #F0F8FF;
+				color: blue;
+			}
+			p{
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+			}
+			.p1{
+				height: 90px;
+				line-height: 90px;
+				text-align: left;
+				padding-left: 40px;
+			}		
+			.p2{
+				height: 30px;
+				line-height: 30px;
+				text-align: left;
+				padding-left: 40px;
+			}
+			.p3{
+				height: 30px;
+				width: 180px;
+				/* 溢出省略 */
+				overflow:hidden;
+				/* 不换行 */
+			    white-space: nowrap;
+				/* 溢出则添加省略号 */
+				text-overflow: ellipsis;
+			}
+			/* ::-webkit-scrollbar{
+				display: none;
+			} */
+		</style>
+	</head>
+	<body>
+		<div class="box0">
+			<div>
+				<div>
+				<p class="p1">100</p>
+				<p class="p2">2022/1/19</p>
+				</div>
+				<p>撒发生</p>
+			</div>
+			<div>
+				<div></div>
+				<p>撒发生</p>
+			</div>
+			<div>
+				<div></div>
+				<p>撒发生</p>
+			</div>
+			<div>
+				<div></div>
+				<p>撒发生</p>
+			</div>
+			<div>
+				<div></div>
+				<p>撒发生</p>
+			</div>
+			<div>
+				<div></div>
+				<p class="p3">撒afafasfasfasfasfasfdasdasdfas发生</p>
+			</div>
+			<div>
+				<div></div>
+				<p>撒发生</p>
+			</div>
+			<div>
+				<div></div>
+				<p>撒发生</p>
+			</div>
+		</div>
+	</body>
+</html>

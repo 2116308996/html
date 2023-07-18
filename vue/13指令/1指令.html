@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box">
+			<div v-hello="'red'">1111111</div>
+			<div v-hello="'yellow'">22222</div>
+			<div v-hello="color">22222</div>
+		</div>
+		<script type="text/javascript">
+		// 实际应用--可以通过指令知道DOM什么时候创建完成，从而进行 依赖dom的库的初始化工作（new swiper)
+		    Vue.directive("hello",{
+				// 指令的生命周期
+				inserted(el,binding){
+					// 第一次插入到父节点触发，只触发一次
+					el.style.backgroundColor=binding.value
+				},
+				update(el,binding){
+					el.style.backgroundColor=binding.value
+				}
+				
+			})
+			var vm=new Vue({
+				el:"#box",
+				data:{
+					color:"blue"
+				}
+			})
+		</script>
+	</body>
+</html>

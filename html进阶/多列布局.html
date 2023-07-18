@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>多列布局</title>
+		<style type="text/css">
+			.box{
+				/* background: yellow; */
+				/* 显示的列数 */
+                column-count: 5;
+				/* 调整列间距 */
+				column-gap: 20px;
+				/* 裂边框 */
+				/* column-rule: 2px solid #0000FF; */
+				/* 列高度统一  auto把父盒子占满*/
+				/* column-fill: balance; */
+				/* 调整列宽度 */
+				/* column-width: 500px; */
+			}
+			.box div img{
+				width: 100%;
+				display: block;
+			}
+			.box div{
+				border: 1px solid gainsboro;
+				/* 禁止盒子内折行 */
+				break-inside: avoid;
+				margin-bottom: 10px;
+				padding: 5px;
+			}
+			.box div p{
+				text-align: center;
+			}
+			div>h1{
+				/* 横跨所有列 */
+				column-span: all;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+		<div>
+			<img src="../image/1.jpg" alt="">
+			<p>新年快乐</p>
+		</div>
+		<div>
+			<img src="../image/2.jpg" alt="">
+			<p>新年快乐</p>
+		</div>
+		<div>
+			<img src="../image/3.jpg" alt="">
+			<p>新年快乐</p>
+		</div>
+		<div>
+			<img src="../image/4.jpg" alt="">
+			<p>新年快乐</p>
+		</div>
+		<div>
+			<img src="../image/5.jpg" alt="">
+			<p>新年快乐</p>
+		</div>
+		<div>
+			<img src="../image/6.jpg" alt="">
+			<p>新年快乐</p>
+		</div>
+		<div>
+			<img src="../image/7.jpg" alt="">
+			<p>新年快乐</p>
+		</div>
+		<div>
+			<img src="../image/8.jpg" alt="">
+			<p>新年快乐</p>
+		</div>
+	
+		<div>
+			<img src="../image/12.jpg" alt="">
+			<p>新年快乐</p>
+		</div>
+		<div>
+			<img src="../image/13.jpg" alt="">
+			<p>新年快乐</p>
+		</div>
+		</div>
+	</body>
+</html>

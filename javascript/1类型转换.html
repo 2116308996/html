@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>hello</title>
+		<style type="text/css">
+		</style>	
+		<script type="text/javascript" src="./1script.js"></script> 
+	    <script type="text/javascript">
+			// alert("hello world");
+			// document.write("看我");
+			// console.log("向控制台输出");
+			// String 字符串 Number 数值 Boolean 布尔值 
+			// null 空值 undefined 未定义 Object 对象 
+			//   \n 换行 \t制表符
+			var a=123;
+			var str='hello "今天天气真好" world';
+			// Number.MAX_VALUE js中数字的最大值
+			// Infinty正无穷
+			// 类型转换 
+			var c=0.1+0.2;
+			console.log(str); 
+			console.log(typeof str);
+			console.log(c);
+			a=toString(a);
+			var b="123";
+			b=Number(b);
+			// 转换方式2
+			// parseInt();把一个字符串转换为整数
+			// parseFloat();把一个字符串转换为浮点数
+			var c="1123px45";
+			c=parseInt(c); 
+			var d="1.123px1";
+			d=parseFloat(d);
+			console.log(d);  
+			 //数字 除了0和NaN都是true
+			 // 字符串 除了空串其余的都是true
+			 // null undefined表示false
+			var f=123;
+			f="false";
+			f=Boolean(f);
+			console.log(f);
+			var g=NaN;
+			console.log(isNaN(g));
+		</script>
+	</head> 
+	<body> 
+		<button onclick="alert('点我干嘛')">点我</button>
+		<a href="../html进阶/2d案例.html">也点我一下</a>
+		<a href="javascript:alert('啊啊啊')">你也点我一下</a>
+	</body>
+</html>

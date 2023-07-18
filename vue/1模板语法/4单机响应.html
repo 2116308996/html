@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+	     	*{
+			    margin: 0;
+		     	padding: 0;
+		    }
+			#box ul{
+				list-style: none;
+				display: flex;
+			}
+			#box li{
+				flex: 1;
+				text-align: center;
+			}
+			.green{
+				background-color: green;
+			}
+			.red{
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li v-for="(data,index) in list" @click="change(index)" :class="count==index?color:''">{{data}}</li>
+			</ul>
+			
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el:"#box",
+				data:{
+					list:["首页","列表","我的"],
+					color:"red",
+					count:0
+				},
+				methods:{
+					change(index){
+						this.count=index;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

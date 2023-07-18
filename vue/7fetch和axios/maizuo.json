@@ -1,0 +1,388 @@
+{
+	"status": 0,
+	"data": {
+		"films": [{
+			"filmId": 5871,
+			"name": "隐入尘烟",
+			"poster": "https://pic.maizuo.com/usr/movie/9d1a0885335a9494836fb27763bd0881.jpg",
+			"actors": [{
+				"name": "李睿珺",
+				"role": "导演",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/5c00ac094b73fffd544af823e7dfa36a.jpg"
+			}, {
+				"name": "海清",
+				"role": "贵英",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/04991fce0366a96d39a1288c933b7ad3.jpg"
+			}, {
+				"name": "武仁林",
+				"role": "马有铁",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/8d0f439d58ede9db5a8269ebcb468730.jpg"
+			}],
+			"director": "李睿珺",
+			"category": "剧情|爱情",
+			"synopsis": "两个被各自家庭抛弃掉的孤独个体，和庄稼一样沦为大地的孩子。在四季时光的流转中，他们那些散落在别人不解目光中的爱，都在比心洁净的土地里结出果实来……",
+			"filmType": {
+				"name": "2D",
+				"value": 1
+			},
+			"nation": "中国大陆",
+			"language": "",
+			"videoId": "",
+			"premiereAt": 1645747200,
+			"timeType": 3,
+			"runtime": 133,
+			"item": {
+				"name": "2D",
+				"type": 1
+			},
+			"isPresale": false,
+			"isSale": false
+		}, {
+			"filmId": 5876,
+			"name": "纽约的一个雨天",
+			"poster": "https://pic.maizuo.com/usr/movie/96fd965aed427a3cf14326457f3d5b95.jpg",
+			"actors": [{
+				"name": "伍迪·艾伦",
+				"role": "导演",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/7ff71415c6a787d7adcf5bf739129912.jpg"
+			}, {
+				"name": "提莫西·查拉梅",
+				"role": "Gatsby Welles",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/bc0e008858a569c5bde60b4fc78717f3.jpg"
+			}, {
+				"name": "艾丽·范宁",
+				"role": "Ashleigh Enright",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/f33849c95bf4f80b2675c972e5eee1d2.jpg"
+			}, {
+				"name": "赛琳娜·戈麦斯",
+				"role": "Chan Tyrell",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/fdb7244d7acd3ebd00ada41077b599c9.jpg"
+			}, {
+				"name": "裘德·洛",
+				"role": "Ted Davidoff",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/36153b8976833af21d0b98f6ff162bbd.jpg"
+			}],
+			"director": "伍迪·艾伦",
+			"category": "爱情|剧情",
+			"synopsis": "年轻情侣盖茨比（提莫西·查拉梅 饰）与艾什莉（艾丽·范宁 饰）来到纽约曼哈顿共度周末，却阴差阳错开始了各自的行程。盖茨比在与女演员茜（赛琳娜·戈麦斯 饰）的热吻中意乱情迷，艾什莉则在多款男神的热辣眼神中沦陷。文艺少男的躁动与甜心少女的迷乱，分别在这个下雨天的城市里谱写着耐人寻味的浪漫。",
+			"filmType": {
+				"name": "2D",
+				"value": 1
+			},
+			"nation": "美国",
+			"language": "",
+			"videoId": "",
+			"premiereAt": 1645747200,
+			"timeType": 3,
+			"runtime": 92,
+			"item": {
+				"name": "2D",
+				"type": 1
+			},
+			"isPresale": true,
+			"isSale": false
+		}, {
+			"filmId": 5877,
+			"name": "你是我的一束光",
+			"poster": "https://pic.maizuo.com/usr/movie/63cdf1f1b46b2fba4b06beacaad512ab.jpg",
+			"actors": [{
+				"name": "王强",
+				"role": "导演",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/356f8581fdda097d4527ae39abe44d79.jpg"
+			}, {
+				"name": "袁文康",
+				"role": "演员",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/750fea5724425c844eb593d63debeb61.jpg"
+			}, {
+				"name": "王西",
+				"role": "演员",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/c1e9775f93f5c20af45c7b540990d51d.jpg"
+			}, {
+				"name": "邓超",
+				"role": "演员",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/a91a7994a4fc9529a164f476242ed7c4.jpg"
+			}, {
+				"name": "蒙亭宜",
+				"role": "演员",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/08512348edc6ab79db2fc44710e0e35c.jpg"
+			}],
+			"director": "王强",
+			"category": "爱情|音乐",
+			"synopsis": "一位用生命守护群众的逆行者，一段不平凡而又揪心的爱情故事。职场、情场都失意的音乐人穆随心（袁文康 饰）驱车前往云南，偶遇单亲妈妈彭彭（王西 饰），二人感情逐渐升温，发现了彼此身上的亮光，也触摸到了内心最深处的秘密伤口，彭彭内心深处无法走出的有关孙雨桐（邓超 饰）的心结也因此慢慢解开······",
+			"filmType": {
+				"name": "2D",
+				"value": 1
+			},
+			"nation": "中国大陆",
+			"language": "",
+			"videoId": "",
+			"premiereAt": 1645747200,
+			"timeType": 3,
+			"runtime": 106,
+			"item": {
+				"name": "2D",
+				"type": 1
+			},
+			"isPresale": true,
+			"isSale": false
+		}, {
+			"filmId": 5879,
+			"name": "我心飞扬",
+			"poster": "https://pic.maizuo.com/usr/movie/b0907b4e4e6b8a3b47366ce2f1095071.jpg",
+			"actors": [{
+				"name": "王放放",
+				"role": "导演",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/a9079091ada2af2058da5693cabcfbf9.jpg"
+			}, {
+				"name": "孟美岐",
+				"role": "杨帆",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/edc03e0a266b3bf7db35fe537fd302e6.jpg"
+			}, {
+				"name": "夏雨",
+				"role": "秦杉",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/547d6fb33c690b7a97959156580c3fb5.jpg"
+			}, {
+				"name": "萨日娜",
+				"role": "演员",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/55130881f9cc37f68a3d14277b4c7245.jpg"
+			}, {
+				"name": "梁文慧",
+				"role": "演员",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/bb1aeb8f5b8fc78c7b4de52fa215fb5e.jpg"
+			}],
+			"director": "王放放",
+			"category": "剧情",
+			"synopsis": "电影《我心飞扬》灵感源自中国冬奥金牌零的突破，讲述冬奥健儿拼搏进取、为国争光的故事。1980年中国代表团开始参加冬奥会，屡次与金牌失之交臂，失败与不甘像针一样狠狠刺痛中国人的心。为实现零的突破，秦杉组建以杨帆为代表的中国短道速滑国家队，临危受命立志一雪前耻。两人向金牌发起冲击，师徒关系也面临着激烈的碰撞和重重考验……",
+			"filmType": {
+				"name": "2D",
+				"value": 1
+			},
+			"nation": "中国大陆",
+			"language": "",
+			"videoId": "",
+			"premiereAt": 1645747200,
+			"timeType": 3,
+			"runtime": 104,
+			"item": {
+				"name": "2D",
+				"type": 1
+			},
+			"isPresale": true,
+			"isSale": false
+		}, {
+			"filmId": 5880,
+			"name": "爷们信条",
+			"poster": "https://pic.maizuo.com/usr/movie/5d3fdf2c45502cc8eb388fba488b61ba.jpg",
+			"actors": [{
+				"name": "林韬",
+				"role": "导演",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/a2831dad9131b1c7a21c51065935711c.jpg"
+			}, {
+				"name": "任达华",
+				"role": "肖剑锋",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/56087e1d22305c93dc9c30441f0b60e0.jpg"
+			}, {
+				"name": "张蓝心",
+				"role": "陈甄丽",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/0d95773e0557e966351e8a72ed3ee916.jpg"
+			}, {
+				"name": "淳于珊珊",
+				"role": "杰麦",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/1bac0617eecc1a0501cf3e5b31b69339.jpg"
+			}, {
+				"name": "石修",
+				"role": "肥仔",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/eb6f34af1007272f464dcc5c238738c9.jpg"
+			}],
+			"director": "林韬",
+			"category": "动作|悬疑|剧情",
+			"synopsis": "这是一部聚焦毒品交易的硬汉戏，它讲述了隐退二十多年的父亲，为了寻找失散亲人又重出江湖的惊险故事。在剧中，任达华和张蓝心真诚、富有深度的表演，诠释了影片“为家人付出一切”的感人主题。跌宕起伏的情节；犀利的动作场面；浪漫主义的情怀以及强悍的视觉风格，都使《爷们信条》成为非常值得期待的影片",
+			"filmType": {
+				"name": "2D",
+				"value": 1
+			},
+			"nation": "中国大陆",
+			"language": "",
+			"videoId": "",
+			"premiereAt": 1645747200,
+			"timeType": 3,
+			"runtime": 100,
+			"item": {
+				"name": "2D",
+				"type": 1
+			},
+			"isPresale": true,
+			"isSale": false
+		}, {
+			"filmId": 5882,
+			"name": "城南老街新戏",
+			"poster": "https://pic.maizuo.com/usr/movie/944e9d3e0a18db80be4f38e91e2294ca.jpg",
+			"actors": [{
+				"name": "杨翼",
+				"role": "导演",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/6be513ac3658c37909d4e156ebe4b412.jpg"
+			}, {
+				"name": "孙乐",
+				"role": "余果",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/a47a7b838657d988b6930a98eeed5974.png"
+			}, {
+				"name": "吴昊",
+				"role": "廖美凤",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/32bb2991b97a2c02ee54d558d0c51062.png"
+			}, {
+				"name": "逯爱岩",
+				"role": "杨光",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/a9be1e9cdf93cd322cee787a435f7ef2.jpg"
+			}, {
+				"name": "杨轶然",
+				"role": "刘老二",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/816b1db679dc38825d48e52ecfaf233e.jpg"
+			}],
+			"director": "杨翼",
+			"category": "犯罪|动作|喜剧",
+			"synopsis": "余老爷子偶然在山林中捡到一块奇石被误传为发现了宝藏。贾老板派出三流导演余果假借拍戏的名义去偷奇石，贾老板的助理信以为真雇来国际大盗，就此一个民间流传的宝藏传说与奇石的荒诞夺宝故事拉开帷幕。",
+			"filmType": {
+				"name": "2D",
+				"value": 1
+			},
+			"nation": "中国大陆",
+			"language": "",
+			"videoId": "",
+			"premiereAt": 1645833600,
+			"timeType": 3,
+			"runtime": 89,
+			"item": {
+				"name": "2D",
+				"type": 1
+			},
+			"isPresale": false,
+			"isSale": false
+		}, {
+			"filmId": 5816,
+			"name": "柳浪闻莺",
+			"poster": "https://pic.maizuo.com/usr/movie/f20053c6bf34f9be4f499f45a099feba.jpg",
+			"actors": [{
+				"name": "戴玮",
+				"role": "导演/编剧/制片人",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/43e309b8e573abc51c5acdc58dc6997d.jpg"
+			}, {
+				"name": "汪飏",
+				"role": "垂髫",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/3a3091296658d0701fae2f5fa4312d71.jpg"
+			}, {
+				"name": "阚昕",
+				"role": "银心",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/861cf2009f7b31804541a378096a1ed1.jpg"
+			}, {
+				"name": "郑云龙",
+				"role": "工欲善",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/799c2c6751548d085a3e060d1d16bc86.jpg"
+			}],
+			"director": "戴玮",
+			"category": "爱情",
+			"synopsis": "该断谅电影影片改编自 茅盾文学奖得主 王旭烽系列小说《 爱情西湖》。故事以西湖十景之一的“ 柳浪闻莺”为背景，主要讲述了江南越剧团里两个姑娘与一个画扇师之间的情感纠葛。极具天赋的女小生垂髫（汪飏饰）与花旦银心（阚昕饰）自幼一起在戏班子长大，两人性格迥异，但情同姐妹。垂髫至情至性，为舞符燥全台而活；银心看似单纯天真，实则是个知进退、会钻营的女孩。她俩本是彼此眼中最重要的那个人，可世事无常、种种分歧纷沓而至，特别是杭州画家工欲善（郑云龙饰）的出现，让相依为命的两个女孩感情面临考验。时代变迁，越剧由盛转衰，垂髫与银趋催热心的命运与越剧一同沉浮  。全剧以越剧文化为最大的看点，场景中也将大量展现嵊符企胶州的景观、古戏台以及近阀拘再欠20分钟的和纸项越剧唱段。",
+			"filmType": {
+				"name": "2D",
+				"value": 1
+			},
+			"nation": "中国大陆",
+			"language": "",
+			"videoId": "",
+			"premiereAt": 1646697600,
+			"timeType": 3,
+			"runtime": 105,
+			"item": {
+				"name": "2D",
+				"type": 1
+			},
+			"isPresale": true,
+			"isSale": false
+		}, {
+			"filmId": 5832,
+			"name": "邓小平小道",
+			"poster": "https://pic.maizuo.com/usr/movie/528d9ee46444447c79c3216261d86ec7.jpg",
+			"actors": [{
+				"name": "雷献禾",
+				"role": "导演",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/fceab5985d6e39c6b95564be221fc59c.jpg"
+			}, {
+				"name": "卢奇",
+				"role": "联合导演",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/b3f857cf47dcf4b758c65898b9537a85.jpg"
+			}, {
+				"name": "卢奇",
+				"role": "邓小平",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/b3f857cf47dcf4b758c65898b9537a85.jpg"
+			}, {
+				"name": "于慧",
+				"role": "卓琳",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/9da90e443f215e08c27d720829755cc6.jpg"
+			}, {
+				"name": "何建泽",
+				"role": "演员",
+				"avatarAddress": "https://pic.maizuo.com/usr/movie/dd9b211e429243d5b4cb63b58d603b49.jpg"
+			}],
+			"director": "雷献禾|卢奇",
+			"category": "剧情|传记",
+			"synopsis": "文革期间邓小平被革职下放江西，面临多重高压危机四伏，但始终保持坚毅、乐观，初心不改。为了他的安全，工厂师傅为他专门开辟了一条近道。三年零四个月，他每天沿着这条小道去工厂劳动，风雨无阻，后人称之为“邓小平小道”“小平小道”。他在坚持劳动的同时还要照顾瘫痪在床的大儿子，每天为他擦背翻身，终因劳累过度、营养不良晕倒车间。危急时分，车间女工以一碗红糖水救了他。他深入基层感知群众生活的疾苦，得出“贫穷不是社会主义”的伟大结论，为他复出后进行治理整顿、改革开放奠定了坚实的思想基础。",
+			"filmType": {
+				"name": "2D",
+				"value": 1
+			},
+			"nation": "中国大陆",
+			"language": "",
+			"videoId": "",
+			"premiereAt": 1646956800,
+			"timeType": 3,
+			"runtime": 105,
+			"item": {
+				"name": "2D",
+				"type": 1
+			},
+			"isPresale": false,
+			"isSale": false
+		}, {
+			"filmId": 3451,
+			"name": "阿凡达2",
+			"poster": "https://pic.maizuo.com/usr/movie/c5da4eddf824824c21f42aebd4f4120f.jpg",
+			"actors": [{
+				"name": "萨姆·沃辛顿",
+				"role": "杰克·萨利",
+				"avatarAddress": "https://pic.maizuo.com/usr/100003451/df050071a829cb47d7612e1e4c3f8b37.jpg"
+			}, {
+				"name": "佐伊·索尔达娜",
+				"role": "奈蒂莉",
+				"avatarAddress": "https://pic.maizuo.com/usr/100003451/a457d0e419128720688a6d11712db4b4.jpg"
+			}, {
+				"name": "西格妮·韦弗",
+				"role": "格蕾丝·奥格斯",
+				"avatarAddress": "https://pic.maizuo.com/usr/100003451/2ebc1d29d21743c960de288930921814.jpg"
+			}, {
+				"name": "史蒂芬·朗",
+				"role": "迈尔斯·夸奇上校",
+				"avatarAddress": "https://pic.maizuo.com/usr/100003451/368a975d10ee8e0bf30b5d5906fb6527.jpg"
+			}],
+			"director": "詹姆斯·卡梅隆",
+			"category": "动作|科幻|奇幻|冒险",
+			"synopsis": "《阿凡达2》的剧情承接自第一部的5年之后。曾经的地球残疾军人杰克·萨利，如今已经是潘多拉星球纳美族一方部族的族长，并且与爱妻娜塔莉共同育有一对可爱的儿女，日子过得平淡而充实。然而某天，有个部族的兄弟在海岸附近巡逻时遭到利器割喉身亡。通过现场勘查，以及作为前海军陆战队员的敏锐直觉，杰克判断已经有人类的阿凡达混入了部落……",
+			"filmType": {
+				"name": "2D",
+				"value": 1
+			},
+			"nation": "美国",
+			"language": "英语",
+			"videoId": "",
+			"premiereAt": 1671321600,
+			"timeType": 3,
+			"runtime": 90,
+			"item": {
+				"name": "2D",
+				"type": 1
+			},
+			"isPresale": false,
+			"isSale": false
+		}],
+		"total": 9
+	},
+	"msg": "ok"
+}

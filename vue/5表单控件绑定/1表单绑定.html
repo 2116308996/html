@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			{{mytest}}
+			<br>
+			<textarea v-model="mytest" rows="" cols=""></textarea><br>
+			
+			用户名：<input type="text" v-model="mytest" name="" id="" value="" /><br>
+			<input type="checkbox" v-model="isRemember" name="" id="" value="remember" />记住用户名
+			<br>
+			<button type="button" @click="handleLogin">登录</button>
+			
+			<div>
+				<h2>注册页面-兴趣爱好</h2>
+				<input type="checkbox" v-model="checkList" name="check1" id="" value="vue" />vue
+				<input type="checkbox" v-model="checkList" name="check1" id="" value="react" />react
+				<input type="checkbox" v-model="checkList" name="check1" id="" value="小程序" />小程序
+				{{checkList}}
+			</div>
+			<div>
+				<h2>性别选择</h2>
+				<input type="radio" v-model="radiolist" name="sex" id="" value="man" />男
+				<input type="radio" v-model="radiolist" name="sex" id="" value="woman" />女
+				{{radiolist}}
+			</div>
+		</div>
+		<script type="text/javascript">
+			var vm=new Vue({
+				el:"#box",
+				data:{
+					mytest:localStorage.getItem("username"),
+					isRemember:false,
+					checkList:[],
+					radiolist:""
+				},
+				methods:{
+					handleLogin(){
+						if(this.isRemember){
+							localStorage.setItem("username",this.mytest)
+						}
+					}
+				}
+			})
+			/* 
+			   vue架构模式？？
+			   mvvm（双向数据绑定）
+			*/
+		</script>
+	</body>
+</html>

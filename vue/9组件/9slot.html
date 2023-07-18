@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box">
+			<child>
+				<template #c>
+					<div>ccccc</div>
+				</template>	
+				<template v-slot:a>
+					<div>aaaa</div>
+				</template>
+				
+				<div slot="b">bbbb</div>
+			</child>
+			<navbar></navbar>
+		</div>
+		<script type="text/javascript">
+		// slot 插槽
+		    Vue.component("navbar",{
+				template:`
+				<div>
+				    <button>返回</button>
+					<span>navbar</span>
+					<slot></slot>
+				</div>
+				`
+			})
+			Vue.component("child",{
+				template:`
+				<div>
+				    child
+					<slot name="a"></slot>
+					<slot name="b"></slot>
+					<slot name="c"></slot>
+				</div>
+				`
+					
+				
+			})
+			new Vue({
+				el:"#box"
+			})
+		</script>
+	</body>
+</html>

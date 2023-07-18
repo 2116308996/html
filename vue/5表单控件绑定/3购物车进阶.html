@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				position: relative;
+			}
+			.box1{
+				height: 50px;
+				line-height: 50px;
+				width: 1200px;
+				margin: 0 auto;
+				background-color: gainsboro;
+			}
+			.goodsbox1{
+				padding-top: 30px;
+				width: 1200px;
+				margin: 0 auto;
+				height: 200px;
+				position: relative;
+			}
+			.box1>div{
+				float: left;
+			}
+			.all{
+				width:130px ;
+				padding-left: 12px;
+			}
+			.goods{
+				width: 430px;
+			}
+			.price{
+				width: 150px;
+			}
+			.quantity{
+				width: 150px;
+			}
+			.sum{
+				width: 150px;
+			}
+			.action{
+				width: 150px;
+			}
+			.goodsbox1>div{
+				float: left;
+			}
+			.g-check{
+				width: 20px;
+				margin-top: 0;
+			}
+			.goodsbox1 .g-img{
+				width: 150px;
+			}
+			.goodsbox1 .g-img img{
+				width: 100%;
+			}
+			.g-textarea{
+				width: 250px;
+				font-size: 12px;
+				padding: 0 10px;
+			}
+			.g-text{
+				width: 120px;
+				height: 200px;
+				font-size: 12px;
+			}
+			.g-quantity{
+				width: 150px;
+			}
+			.g-price{
+				width: 150px;
+			}
+			.g-sum{
+				width: 150px;
+			}
+			.g-action{
+				width: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<h3>购物车</h3>
+			<div class="box1">
+				<div class="all">
+					<input type="checkbox" v-model="isall" @change="changeall" name="all" id="checkbox1" value="" />
+					全选
+				</div>
+				<div class="goods">商品</div>
+				<div class="price">单价</div>
+				<div class="quantity">数量</div>
+				<div class="sum">小计</div>
+				<div class="action">操作</div>
+			</div>
+			
+			<div v-for="(data,index) in list" :key="data.id">
+				<div><input type="checkbox" name="" id="" :value="data" v-model="oldlist" @change="messageall"/>{{data.shop}}</div>
+				<div v-for="(item,indexson) in data.message" :key="item.id">
+					<div class="goodsbox1">
+						<div class="g-check">
+							<input type="checkbox" @change="option" checked="checked" name="" id="" :value="item" v-model="newlist"/>
+						</div>
+						<div class="g-img">
+							<img :src="item.img" alt="">
+						</div>
+						<div class="g-textarea">
+								{{item.textarea}}
+						</div>
+						<div class="g-text">
+							{{item.text}}
+						</div>
+						<div class="g-price">
+								{{item.price}}
+						</div>
+						<div class="g-quantity" >
+							<button type="button" @click="item.count--" :disabled="item.count===1">➖</button>
+							{{item.count}}
+							<button type="button" @click="item.count++">➕</button>
+						</div>
+						<div class="g-sum">
+							{{item.price*item.count}}
+						</div>
+						<div class="g-action">
+							<a href="" @click.prevent="del(index,indexson,item.id)">删除</a>
+						</div>
+					</div>
+				</div>
+				
+				
+			</div>
+			<div>
+				总计：{{maxsum1()}}{{oldlist}}
+			</div>
+            <div>{{newlist}}</div>
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el:"#box",
+				data:{
+					isall:false,
+					
+					oldlist:[],
+					newlist:[],
+					list:[{
+						id:1,
+						shop:"影驰旗舰店",
+						message:[{
+							id:1,
+							img:"../../image/25.jpg",
+					    	textarea:"影驰（Galaxy）GeForce RTX2060 12G N卡 电竞专业台式机电脑游戏显卡 RTX 2060 大将MAX选服务",
+					    	text:"RTX 2060 大将MAX",
+					    	price:3399.00,
+					    	count:1,
+						},
+						{   
+							id:2,
+							img:"../../image/26.jpg",
+							textarea:"微星（MSI）万图师 GeForce RTX 1050 VENTUS 12G OC 超频版 电竞",
+							text:"1050-万图师OC",
+							price:1599.00,
+							count:1,
+						}]
+						
+					},
+					{   
+						id:2,
+						shop:"微星京东自营旗舰店",
+						message:[{
+							id:1,
+							img:"../../image/24.jpg",
+							textarea:"微星（MSI）万图师 GeForce RTX 2060 VENTUS 12G OC 超频版 电竞",
+							text:"2060-万图师OC",
+							price:3599.00,
+							count:1,
+						},]
+					},
+					]
+				},
+				methods:{
+					messageall(){
+						
+					},
+					del(index,indexson,id){
+						this.list[index].message.splice(indexson,1);
+						this.newlist=this.newlist.filter(item=>item.message.id!==id);
+					},
+					changeall(){
+						if(this.isall){
+							this.oldlist=this.list
+						}else{
+							this.oldlist=[]
+						}
+						
+					},
+					maxsum1(){
+						var total=0
+						this.newlist.forEach(item=>{
+							total+=item.price*item.count
+						})
+						return total
+					},
+					option(){
+						
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>动画</title>
+		<style type="text/css">
+		@keyframes mymove{
+			0%{}
+			100%{
+				transform: rotate(360deg);
+			}
+		}
+			.box5{
+				width: 400px;
+				height: 400px;
+				border: 1px solid gainsboro;
+				background: linear-gradient(white 50%,black 50%);
+				margin: 10px auto;
+				display: flex;
+				align-items: center;
+				border-radius: 50%;
+				/* transition: all 2s; */
+				/* 动画 
+				动画名称 
+				动画持续时间 
+				动画的过渡类型 linear ease ease-in ease-out ease-in-out
+				动画延迟时间 
+				动画循环次数 infinite无限循环
+				动画在循环中是否反向运动 reverse反向运行 
+				alternate先正常运行再反向运行，并持续交替运行
+				alternate-reverse先反向运行再正常运行，并持续交替运行
+				steps(1,end)
+				end 对一个片段 保留当前帧，看不到后一帧，动画结束
+				*/
+				animation: mymove 2s linear  infinite;
+			}
+			.box5::before{
+				content: "";
+				display: block;
+				width: 200px;
+				height: 200px;
+				background: radial-gradient(white 25%,black 25%);
+				border-radius: 50%;
+			}
+			.box5::after{
+				content: "";
+				display: block;
+				width: 200px;
+				height: 200px;
+				background: radial-gradient(black 25%,white 25%);
+				border-radius: 50%;
+			}
+			.box5:hover{
+				/* 旋转 */
+				/* transform: rotate(360deg); */
+				/* transform: rotateX(40deg); */
+				/* 鼠标移入暂停动画 */
+				animation-play-state: paused;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box5"></div>
+	</body>
+</html>

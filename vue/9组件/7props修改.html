@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<div id="box">
+			{{title}}
+			<child :mytitle="title"></child>
+		</div>
+		<script type="text/javascript">
+		// v-once 确保这些类容只计算一次
+		// props 内的属性不允许直接修改this.mytitle="2222"
+		    Vue.component("child",{
+				props:["mytitle"],
+				template:`
+				  <div v-once>
+				     child-{{mytitle}}
+					 <button @click="handleclick">修改</button>
+				  </div>
+				`,
+				methods:{
+					handleclick(){
+						// this.mytitle="2222"
+					}
+				}
+			})
+			var vm=new Vue({
+				el:"#box",
+				data:{
+					title:"11111111"
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DOM练习</title>
+		<style>
+		    *{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 800px;
+				height: 500px;
+				border: 1px solid gray;
+				margin: 0 auto;
+			}
+			.box>div{
+				float:right;
+				box-sizing: border-box;
+				margin: 10px; 
+			}
+			.box>div:nth-child(2){
+				width: 400px;
+				height: 360px;
+				border: 1px solid gray;
+			}
+			.box>div:nth-child(2) div{
+				text-indent:1em;
+			}
+			.box>div:nth-child(2) div:nth-child(1){
+				margin-top: 20px;
+			}
+			.box>div:nth-child(2) li:hover{
+				background: darkgreen;
+			}
+			.box>div:nth-child(1){
+				width: 360px;
+				height: 480px;
+				border: 1px solid gray;
+				text-align: center;
+			}
+			.box>div:nth-child(1) input{
+				width: 300px;
+				margin: 10px;
+			}
+			.box>div:nth-child(1) input:hover{
+				background: linear-gradient(gainsboro,skyblue);
+				
+			}
+			.box>div:nth-child(3){
+				width: 400px;
+				height: 100px;
+				border: 1px solid gray;
+				padding: 5px;
+			}
+			.box>div ul{
+				list-style: none;
+				height: 100px;
+				margin-left: 20px;
+			}
+			.box>div ul li{
+				width: 80px;
+				height: 30px;
+				margin:35px 5px;
+				background-color: seagreen;
+				float: left;
+				text-align: center;
+				line-height: 30px;
+			}
+			#boxx{
+				width: 500px;
+				height: 330px;
+				border: 1px solid black;
+				margin: 0 auto;
+				text-align: center;
+				margin-bottom: 100px;
+			}
+			#boxx img{
+				height:300px;
+			}
+		</style>
+		<script type="text/javascript">
+		    function myClick(id,fun){
+		    	var btn=document.getElementById(id);
+		    	btn.onclick=fun;
+		    }
+			window.onload=function(){
+				var btn01=document.getElementById("btn1");
+				btn01.onclick=function(){
+					var bj=document.getElementById("city").getElementsByTagName("li");
+					alert(bj[0].innerHTML);
+					bj=null;
+				};
+				
+				var btn02=document.getElementById("btn2");
+				btn02.onclick=function(){
+					var li=document.getElementsByTagName("li");
+					var result="";
+					for (var i=0;i<li.length;i++){
+						result=result+li[i].innerHTML+" ";
+					}
+					alert(result);
+				};
+				
+				var btn03=document.getElementById("btn3");
+				btn03.onclick=function(){
+					var gender=document.getElementsByName("gender");
+					for(var i=0;i<gender.length;i++){
+						// 读class 要用className
+						alert(gender[i].value);
+					}
+				};
+				
+				var bth04=document.getElementById("btn4");
+				bth04.onclick=function(){
+					var cityli=document.getElementById("city").getElementsByTagName("li");
+					var result="";
+					for(var i=0;i<cityli.length;i++){
+						result=result+cityli[i].innerHTML+" ";
+					}
+					alert(result);
+				};
+				
+				var bth05=document.getElementById("btn5");
+				bth05.onclick=function(){
+					var citychild=document.getElementById("city").children;
+					var result="";
+					for(var i=0;i<citychild.length;i++){
+						result=result+citychild[i].innerHTML+" ";
+					}
+					alert(result);
+				};
+				
+				var btn06=document.getElementById("btn6");
+				btn06.onclick=function(){
+					var first=document.getElementById("phone").children[0];
+					alert(first.innerHTML);
+				};
+				// parentNode 当前节点的父节点
+				// previousElementSibling       的前一个兄弟节点
+				// nextElementSibling           的后一个兄弟节点
+				myClick('btn7',function(){
+					var fa=document.getElementById("bj").parentNode;
+					alert(fa.innerText);
+				});
+				
+				myClick("btn8",function(){
+					var bor=document.getElementById("android").previousElementSibling;
+					alert(bor.innerHTML);
+				});
+				
+				myClick("btn9",function(){
+					var value=document.getElementById("username").value;
+					alert(value);
+				});
+				
+				myClick("btn10",function(){
+					var val=document.getElementById("username");
+					var name= prompt("请输入用户名");
+					val.value=name;
+				});
+				
+				myClick("btn11",function(){
+					var text=document.getElementById("bj").innerText;
+					alert(text);
+				});
+			};
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<div>
+			<input type="button" name="btn1" id="btn1" value="查找#bj节点" />
+			<input type="button" name="btn2" id="btn2" value="查找所有li节点" />
+			<input type="button" name="btn3" id="btn3" value="查找name=gender的所有节点" />
+			<input type="button" name="btn4" id="btn4" value="查找#city下所有li节点" />
+			<input type="button" name="btn5" id="btn5" value="查找#city下所有子节点" />
+			<input type="button" name="btn6" id="btn6" value="返回#phone的第一个节点" />
+			<input type="button" name="btn7" id="btn7" value="返回#bj的父节点" />
+			<input type="button" name="btn8" id="btn8" value="返回#android的前一个兄弟节点" />
+			<input type="button" name="btn9" id="btn9" value="返回#username的value属性值" />
+			<input type="button" name="btn10" id="btn10" value="设置#username的value属性值" />
+			<input type="button" name="btn11" id="btn11" value="返回#bj的文本值" />
+			</div>
+			<div>
+				<div>你喜欢哪个城市？</div>
+				<ul id="city">
+					<li id="bj">北京</li>
+					<li>上海</li>
+					<li>东京</li>
+					<li>首尔</li>
+				</ul>
+				<div>你喜欢哪款单机游戏？</div>
+				<ul id="game">
+					<li>红警</li>
+					<li>实况</li>
+					<li>极品飞车</li>
+					<li>魔兽</li>
+				</ul>
+				<div>你手机的操作系统是？</div>
+				<ul id="phone">
+					<li>IOS</li>
+					<li id="android">Android</li>
+					<li style="width: 120px;">Windiws Phone</li>
+				</ul>
+			</div>
+			<div>
+				<form action="" method="">
+				    <span>gender:</span>
+					<input type="radio" name="gender" id="radio1" value="Male" />
+				    <label for="radio1">Male</label>
+			     	<input type="radio" name="gender" id="radio2" value="Female" />
+			    	<label for="radio2">Female</label>
+					<br>
+			 	    <span>name:</span>
+					<input type="text" name="text1" id="username" value="" />
+				</form>
+				
+			</div>
+		</div>
+		<div id="boxx">
+			<img src="../image/19.jpg" alt="">
+			<br>
+			<input type="button" name="" id="prev" value="上一张" />
+			<input type="button" name="" id="next" value="下一张" />
+		</div>
+		<script>
+		    var img=document.getElementById("boxx").getElementsByTagName("img");
+		    var prev=document.getElementById("prev");
+			var next=document.getElementById("next");
+			var imgarr=["../image/19.jpg","../image/20.jpg","../image/21.jpg","../image/22.jpg","../image/23.jpg"];
+			var index=0;
+			prev.onclick=function(){
+				if(index>0){
+					index--;
+					img[0].src=imgarr[index];
+				}
+				else{
+					index=imgarr.length-1;
+					img[0].src=imgarr[index];
+				}
+			};
+			next.onclick=function(){
+				if(index<imgarr.length-1){
+					index++;
+				img[0].src=imgarr[index];
+				}
+				else{
+					index=0;
+					img[0].src=imgarr[index];
+				}
+			};
+		</script>
+	</body>
+</html>

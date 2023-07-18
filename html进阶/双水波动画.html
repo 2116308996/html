@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.quan{
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+				background-color: yellow;
+				margin: 0 auto;
+				margin-top: 200px;
+			}
+			.shui{
+				position: relative;
+				border-radius: 50%;
+				width: 150px;
+				height: 150px;
+				background-color: #007AFF;
+				/* overflow: hidden; */
+			}
+			.shui::after{
+			            content: '';
+			            position: absolute;
+			            top: 0;
+			            left: 50%;
+			            width: 150%;
+			            height: 150%;   
+			            border-radius: 40%;
+			            background-color: red;
+			           /* animation: shi 5s linear infinite; */
+			        }
+					 @keyframes shi{
+					            0%{
+					                transform: translate(-50%,-65%) rotate(0deg);
+					               
+					            }
+					            100%{
+					                transform: translate(-50%,-65%) rotate(360deg); 
+					              
+					            }
+					        }
+			.shui::before{
+			            content: '';
+			            position: absolute;
+			            top: 0px;
+			            left: 50%;
+			            width: 150%;
+			            height: 150%;   
+			            border-radius: 42%;
+			            background-color: skyblue;
+			         /*   animation: xu 7s linear infinite; */
+			            
+			        }
+					@keyframes xu{
+					            0%{
+					                transform: translate(-50%,-60%) rotate(0deg);
+					               
+					            }
+					            100%{
+					                transform: translate(-50%,-60%) rotate(360deg); 
+					              
+					            }
+					        }
+		</style>
+	</head>
+	<body>
+		<div class="quan">
+			<div class="shui"></div>
+		</div>
+	</body>
+</html>

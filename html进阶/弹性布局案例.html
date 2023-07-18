@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>弹性布局案例</title>
+		<link rel="stylesheet" href="./font/iconfont.css">
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				margin: 0 auto;
+				height: 1420px;
+				width: 955px;
+				/* background: yellow; */
+				display: flex;
+				flex-direction: column;
+			}
+			header{
+				height: 124px;
+				display: flex;
+				line-height: 124px;
+				font-size: 50px;
+				color: white;
+				background: #0C345C;
+				text-align: center;
+			}
+			header div{
+				width: 100px;
+			}
+			header div:nth-child(2){
+				flex: 1;
+				text-align: left;
+			}
+			footer{
+				border-top:1px solid gray ;
+				height: 128px;
+				display: flex;
+				align-items: center;
+			}
+			footer div{
+				width: 25%;
+				display: flex;
+				flex-direction: column;
+				text-align: center;	
+			}
+			footer div span{
+				font-size: 30px;
+			}
+			footer div span.iconfont{
+				font-size: 66px;
+			}
+			footer div:hover{
+				color: #0077AA;
+			}
+			section{
+				flex: 1;
+			}
+			span.iconfont{
+				font-size: 50px;
+			}
+			main{
+				display: flex;
+				height: 278px;
+				background: #0C345C;
+				justify-content: space-around;
+				align-items: center;
+			}
+			main div{
+				width: 120px;
+				height: 168px;
+				text-align: center;
+				display:flex ;
+				flex-direction: column;
+			}
+			main div span{
+				font-size: 40px;
+				color: white;	
+			}
+			main div span.iconfont{
+				font-size: 120px;
+			}
+			.list{
+				display: flex;
+				flex-wrap: wrap;
+				height: 624px;
+				background: white;	
+			}
+			.list div{
+				width: 25%;
+				height: 208px;
+				border: 1px gray solid;
+				box-sizing: border-box;
+				text-align: center;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+			.list div span{
+				height: 77px;
+				line-height: 77px;
+				font-size:30px;
+			}
+			.list div span.iconfont{
+				height: 66px;
+				line-height: 66px;
+				font-size: 55px;
+			}
+			.img{
+				margin-top: 30px;
+				height: 200px;
+				background: url(../image/8.jpg) no-repeat center;
+				background-size: cover;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<header>
+				<div><span class="iconfont icon-caidan"></span></div>
+				<div>账单</div>
+				<div><span class="iconfont icon-wode"></span></div>
+				<div><span class="iconfont icon-sousuo"></span></div>
+				<div><span class="iconfont icon-jiahao1"></span></div>
+			</header>
+			<section>
+				<main>
+					<div><span class="iconfont icon-saoma"></span><span>扫一扫</span></div>
+					<div><span class="iconfont icon-saoma"></span><span>付款</span></div>
+					<div><span class="iconfont icon-xinyongqia"></span><span>卡券</span></div>
+					<div><span class="iconfont icon-saoma"></span><span>其他</span></div>
+				</main>
+				<div class="list">
+					<div><span class="iconfont icon-xinyongqia"></span><span>扫一扫</span></div>
+					<div><span class="iconfont icon-xinyongqia"></span><span>扫一扫</span></div>
+					<div><span class="iconfont icon-xinyongqia"></span><span>扫一扫</span></div>
+					<div><span class="iconfont icon-xinyongqia"></span><span>扫一扫</span></div>
+					<div><span class="iconfont icon-taobao" style="color: #0000FF;"></span><span>淘宝</span></div>
+					<div><span class="iconfont icon-taobao"></span><span>淘宝</span></div>
+					<div><span class="iconfont icon-taobao"></span><span>淘宝</span></div>
+					<div><span class="iconfont icon-taobao"></span><span>淘宝</span></div>
+					<div><span class="iconfont icon-xinyongqia"></span><span>扫一扫</span></div>
+					<div><span class="iconfont icon-xinyongqia"></span><span>扫一扫</span></div>
+					<div><span class="iconfont icon-xinyongqia"></span><span>扫一扫</span></div>
+					<div><span class="iconfont icon-xinyongqia"></span><span>扫一扫</span></div>
+				</div>
+				<div class="img">
+					
+				</div>
+			</section>
+			<footer>
+				<div><span class="iconfont icon-wode"></span><span>我的</span></div>
+				<div><span class="iconfont icon-wode"></span><span>我的</span></div>
+				<div><span class="iconfont icon-wode"></span><span>我的</span></div>
+				<div><span class="iconfont icon-wode"></span><span>我的</span></div>
+			</footer>
+		</div>
+	</body>
+</html>

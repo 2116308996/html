@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数据列表</title>
+		<style type="text/css">
+			/* > 亲儿子
+			   ~亲兄弟
+			   +当前元素后面第一个兄弟
+			 */
+			
+			.dfg~p{
+				background-color: yellow;
+			}
+			.dfg+p{
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="dfg">11111</div>
+		<p>22222</p>
+		<p>333333</p>
+		<div>
+			<p>444444</p>
+		</div>
+		<input type="text" name="" id="" value="" list="mylist" />
+		<datalist id="mylist">
+			<option value ="手机"></option>
+			<option value ="手表"></option>
+			<option value ="手镯"></option>
+			<option value ="手环"></option>	
+		</datalist>
+	</body>
+</html>

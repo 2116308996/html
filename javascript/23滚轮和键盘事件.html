@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box1{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var box1=document.getElementById("box1");
+				// 在火狐中要用DOMMouseScroll来绑定滚轮事件
+				// 而且要通过addEventListener()函数来绑定
+				// event.preventDefault()取消addEventListener默认行为
+				box1.onmousewheel=function(event){
+					// wheelDelta获取鼠标滚轮的方向 deltaY
+					var wth=box1.clientHeight;
+					box1.style.height=wth+event.wheelDelta+"px";
+					return false;
+				};
+				document.onkeydown=function(event){
+					// ctrlKey altKey shiftKey
+					if(event.keyCode==89&&event.ctrlKey){
+						alert("ctrl+y被按下了");
+					}
+					
+				};
+				document.onkeyup=function(event){
+					
+				};
+				var input=document.getElementById("input");
+				// 使文本框不能输入数字
+				input.onkeydown=function(){
+					if(event.keyCode>=48&&event.keyCode<=57){
+						return false;
+					}
+					if(event.keyCode>=97&&event.keyCode<=105){
+						return false;
+					}
+					console.log("按下了");
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<div id="box1"></div>
+		<input type="text" name="" id="input" value="" />
+	</body>
+</html>

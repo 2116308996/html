@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+		<script type="text/javascript">
+			// BOM 浏览器对象模型
+			// BOM对象  window navigator location history screen
+			window.onload=function(){
+				console.log(navigator.appName); 
+				console.log(navigator.userAgent); 
+				// Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+				// AppleWebKit/537.36 (KHTML, like Gecko)
+			    // Chrome/96.0.4664.45 Safari/537.36
+				// window.ActiveXObject对象只有IE里面有
+				if("ActiveXObject" in window){
+					console.log("你是IE");
+				}
+				
+				// history
+				// length可以获取到当次访问的链接数量
+				// back()回退到上一个页面
+				// forward()可以跳转到下一个页面
+				// go(number)跳到指定的页面 跳转整数个页面
+				
+				var btn=document.getElementById("btn1");
+				btn.onclick=function(){
+					history.back();
+				};
+				
+				// Location 该对象封装了浏览器地址栏信息
+				 // location="https://www.baidu.com"
+				// assign()跳转到其他页面，和直接修改location一样
+				// reload()用于重新加载页面，和刷新一样，
+				// 传一个参数true可强制清空缓存，刷新页面
+				// replace()使用replace不会生成历史记录，不能回退
+				
+				// 
+				var h2=document.getElementById("h2");
+				// setInterval()
+				// 将一个函数每隔一段时间调用一次
+				// 返回值用来区分定时器
+				// clearInterval()用来关闭定时器
+				var i=0;
+				var timer=setInterval(function(){
+					h2.innerHTML=i++;
+					if(i==10){
+						clearInterval(timer);
+					}
+				},1000);
+				
+				// 延时调用
+				// setTimeout() 间隔一段时间再执行
+				// 定时调用会执行多次，延时调用只执行一次
+			};
+		</script>
+	</head>
+	<body>
+		<h1>BOM</h1>
+		<a href="./1类型转换.html">去类型转换</a>
+		<button type="button" id="btn1">点我</button>
+		<h1 id="h2"></h1>
+	</body>
+</html>

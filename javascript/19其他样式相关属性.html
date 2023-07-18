@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box1{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				padding: 10px;
+				border: #000000 10px solid;
+				margin: 10px;
+			}
+			#box4{
+				width: 200px;
+				height: 300px;
+				background-color: yellow;
+				overflow: auto;
+			}
+			#box5{
+				width: 150px;
+				height: 600px;
+				background-color: #00FFFF;
+				border-radius: 20%;
+			}
+			#info{
+				width: 300px;
+				height: 500px;
+				background-color: whitesmoke;
+				overflow: auto;
+				margin: 20px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var box1=document.getElementById("box1");
+				var btn1=document.getElementById("btn1");
+				var box4=document.getElementById("box4");
+				var box5=document.getElementById("box5");
+				btn1.onclick=function(){
+					// clientWith
+					// clientHeight
+					// 返回盒子的可见宽度和高度,包括内容和内边距
+					 
+				    // offsetHeight
+					// offsetWith 包括内容，内边距，边框
+					
+					// offsetparent获取离元素最近的开启定位的父元素
+					// 如果没有则返回body
+					// offsetLeft当前元素相对于定位父元素的水平偏移量
+					// offsetTop当前元素相对于定位父元素的垂直偏移量
+					
+					// scrollHeight 返回盒子的实际宽度和高度，滚动高度
+					// scrollWith
+					// scrollLeft 返回水平滚动条滚动的距离
+					// scrollTop  返回垂直滚动条滚动的距离
+					// 当scrollheight-scrollTop==clientHeight
+					// 说明垂直滚动条滚到底了
+					alert(box4.clientWidth);
+				};
+				
+				// 练习
+				var info=document.getElementById("info");
+				var toyi=document.getElementById("toyi");
+				var zhuce=document.getElementById("zhuce");
+				info.onscroll=function(){
+					if(info.scrollHeight-info.scrollTop-info.clientHeight<1){
+						toyi.disabled=false;
+						zhuce.disabled=false;
+					}
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<button id="btn1">点我一下</button>
+		<br>
+		<div id="box1"></div>
+		<div id="box4">
+			<div id="box5"></div>
+		</div>
+		<div>
+			<h3>欢迎情爱的用户</h3>
+			<div id="info">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+			 Blanditiis consequatur incidunt quae nesciunt illum iure nisi
+			  autem maiores et accusamus in placeat ex vero labore minima
+			   quaerat eius. Facere vel!Lorem ipsum dolor sit amet, consectetur
+				adipisicing elit.
+			 Blanditiis consequatur incidunt quae nesciunt illum iure nisi
+			  autem maiores et accusamus in placeat ex vero labore minimaLorem 
+			  ipsum dolor sit amet, consectetur adipisicing elit.
+			 Blanditiis consequatur incidunt quae nesciunt illum iure nisi
+			  autem maiores et accusamus in placeat ex vero labore minimaLorem 
+			  ipsum dolor sit amet, consectetur adipisicing elit.
+			 Blanditiis consequatur incidunt quae nesciunt illum iure nisi
+			  autem maiores et accusamus in placeat ex vero labore minimaLorem
+			   ipsum dolor sit amet, consectetur adipisicing elit.
+			 Blanditiis consequatur incidunt quae nesciunt illum iure nisi
+			  autem maiores et accusamus in placeat ex vero labore minimaLorem 
+			  ipsum dolor sit amet, consectetur adipisicing elit.
+			 Blanditiis consequatur incidunt quae nesciunt illum iure nisi
+			  autem maiores et accusamus in placeat ex vero labore minimaLorem 
+			  ipsum dolor sit amet, consectetur adipisicing elit.
+			 Blanditiis consequatur incidunt quae nesciunt illum iure nisi
+			  autem maiores et accusamus in placeat ex vero labore minimaLorem 
+			  ipsum dolor sit amet, consectetur adipisicing elit.
+			 Blanditiis consequatur incidunt quae nesciunt illum iure nisi
+			  autem maiores et accusamus in placeat ex vero labore minimaLorem 
+			  ipsum dolor sit amet, consectetur adipisicing elit.
+			 Blanditiis consequatur incidunt quae nesciunt illum iure nisi
+			  autem maiores et accusamus in placeat ex vero labore minimaLorem 
+			  ipsum dolor sit amet, consectetur adipisicing elit.
+			 Blanditiis consequatur incidunt quae nesciunt illum iure nisi
+			  autem maiores et accusamus in placeat ex vero labore minimaLorem 
+			  ipsum dolor sit amet, consectetur adipisicing elit.
+			 Blanditiis consequatur incidunt quae nesciunt illum iure nisi
+			  autem maiores et accusamus in placeat ex vero labore minimaLorem 
+			  ipsum dolor sit amet, consectetur adipisicing elit.
+			 Blanditiis consequatur incidunt quae nesciunt illum iure nisi
+			  autem maiores et accusamus in placeat ex vero labore minima</div>
+		    <input type="checkbox" name="" id="toyi" value="4654"disabled="disabled" />我以仔细阅读
+			<input type="button" name="" id="zhuce" value="注册" disabled="disabled" />
+			<br><br>
+		</div> 
+		
+	</body>
+</html>

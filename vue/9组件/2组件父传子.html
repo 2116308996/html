@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../axios.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.bb{
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div style="background-color: yellow;">根组件标题</div>
+			<navbar myname="电影" :myright="false" :myparent="parent">
+				
+			</navbar>
+			<navbar myname="永远" :myright="true"></navbar>
+		</div>
+		<script type="text/javascript">
+		    Vue.component("navbar",{
+			
+				// props:["myname","myright"],//接收myname属性
+				
+				// props:{
+				// 	myname:String,
+				// 	myright:Boolean,
+				// },//接收myname属性  验证属性类型
+				
+				props:{
+					myname:{
+						type:String,
+						default:""
+					},
+					myright:{
+						type:Boolean,
+						default:true
+					},
+					myparent:{
+						type:String,
+						default:""
+					}
+				},//接收myname属性  验证属性类型  设置默认属性
+				
+				template:`<div>
+				<button type="button" v-show="myleft">left</button>
+			    <span @click="used" class="bb">{{myname}}--{{myparent}}</span>
+			    <button type="button" v-show="myright">right</button>
+				</div>`,
+				methods:{
+					used(){
+						this.myleft=!this.myleft
+					}
+				},
+				data() {
+					return{
+					    myleft:true,
+					}
+				}
+			})
+			new Vue({
+				el:"#box",
+				data:{
+					parent:"parent111"
+				}
+			})
+			
+		</script>
+	</body>
+</html>

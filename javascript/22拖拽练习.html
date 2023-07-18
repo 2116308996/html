@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				position: absolute;
+			}
+			#box1{
+				width: 200px;
+				height: 200px;
+				background-color: yellow;
+				position: absolute;
+				left: 200px;
+				top: 200px;
+			}
+		</style>
+		<script type="text/javascript">
+		// onmousedowm  鼠标按下时
+		// onmousemove  鼠标移动时
+		// onmouseup    鼠标松开始
+			window.onload=function(){
+				var box=document.getElementById("box");
+				box.onmousedown=function(event){
+					var ofl=event.clientX-box.offsetLeft;
+					var oft=event.clientY-box.offsetTop;
+					document.onmousemove=function(event){
+					    var left=event.clientX;
+						var top=event.clientY;
+						box.style.left=left-ofl+"px";
+						box.style.top=top-oft+"px";
+				    };
+					document.onmouseup=function(){
+					    document.onmousemove=null;
+						document.onmouseup=null;
+				    };
+					//
+					return false;
+				};
+				 
+			
+			};
+		</script>
+	</head>
+	<body>
+		sadasfa
+		<div id="box"></div>
+		<div id="box1"></div>
+	</body>
+</html>

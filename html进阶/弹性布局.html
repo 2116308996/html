@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>弹性布局</title>
+		<style type="text/css">
+			.box{
+				margin: 0 auto;
+				width: 500px;
+				height: 500px;
+				background: yellow;
+				display: flex;
+				/* column纵向排列 row横向排列  row-reverse反向排列*/
+				flex-direction: row;
+				/* flex-start 居左{前}
+				   flex-end 居右{后}
+				   center 居中
+				   space-arround距离环绕
+				   space-between两端对齐
+				 */
+				justify-content: space-around;
+				/* 调整侧轴 */
+				align-items: center;
+				/* 折行 */
+				flex-wrap: wrap;
+				/* 折行后的行间距 */
+				/* align-content: center; */
+			}
+			.box div{
+				width: 120px;
+				height: 100px;
+				background: #00FFFF;
+			}
+			.box div:nth-child(1){
+				/* 为自己设置对齐方式
+				   baseline;
+				   stretch拉伸
+					*/
+				align-self: flex-start;
+				/* 排列顺序权重 */
+				order: 0;
+			}
+			.box div:nth-child(2){
+				/* 占满剩余空间 */
+				flex: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div>1111</div>
+			<div>2222</div>
+			<div>3333</div>
+			<div>4444</div>
+			<div>5555</div>
+		</div>
+	</body>
+</html>

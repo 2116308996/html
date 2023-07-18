@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>京东分类页案例</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html,body{
+			height: 100%;
+		}
+		ul{
+			list-style: none;
+		}
+		body{
+			display: flex;
+			flex-direction: column;
+		}
+		header{
+			height: 45px;
+			background-color: yellow;
+		}
+		header ul{
+			height: 100%;
+			width: 100%;
+			display: flex;
+			overflow-x: auto;
+		}
+		header ul li{
+			height: 45px;
+			line-height: 45px;
+			width: 100px;
+			/* 不允许挤压 */
+			flex-shrink: 0;
+			text-align: center;
+		}
+		header ul li:hover{
+			color: red;
+			background-color: white;
+		}
+		section{
+			flex: 1;
+			display: flex;
+			overflow: auto;
+		}
+		footer{
+			height: 50px;
+			background-color: yellow;
+		}
+		section ul{
+			width: 85px;
+			overflow: auto;
+		}
+		section ul li{
+			height: 45px;
+			line-height: 45px;
+			text-align: center;
+			font-size: 14px;
+			background-color: #DEDEDE;
+		
+		}
+		section ul li:hover{
+			color: red;
+			background-color: white;
+		}
+		section main{
+			flex: 1;
+			background-color: #0077AA;
+			overflow: auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			
+		}
+		section main div{
+			width: 49%;
+			height: 200px;
+			background-color: blue;
+			margin-top: 5px;
+		}
+		/* 隐藏滚动条 */
+		::-webkit-scrollbar{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<ul>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+		</ul>
+	</header>
+	<section>
+		<ul>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+			<li>热门推荐</li>
+		</ul>
+		<main>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</main>
+	</section>
+	<footer></footer>
+</body>
+</html>

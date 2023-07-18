@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>选择器</title>
+		<style type="text/css">
+			/* 层级选择器
+			   > 亲儿子
+			   ~亲兄弟
+			   +当前元素后面第一个兄弟
+			 */
+			.dfg~p{
+				background-color: yellow;
+			}
+			.dfg+p{
+				background-color: red;
+			}
+			/* 属性选择器 */
+			p[class]{
+				background-color: #0000FF;
+			}
+			
+			input[name]{
+				background: #00FFFF;
+			}
+			/* = 完全匹配 
+			   ~=包含匹配*/
+			input[type=tel]{
+				background: red;
+			}
+			div[class~=dfg]{
+				background: #008000;
+			}
+			/* 模糊匹配
+			    class^=b以b开头
+				class$=b以b结尾
+				class*=b包含b匹配
+				*/
+			input[type^=d]{
+				background: #0C345C;
+			}
+			/*x的第一个div孩子
+			x div:first-child{
+				background:red;}
+				最后一个div
+			x的div:last-child{
+				background:red;
+			}
+			   */
+			/*x 的第偶数个div孩子
+			x div:nth-child(2n){
+				
+			} */
+			/* 空选择器
+			div:empty{
+				background: red;
+			} 
+			*/
+		   /* target
+		   结合锚点，鼠标点击则生效
+			*/
+		   /* 去除默认样式
+		   appearance:none; */
+		   /* 在form表单中
+		   E:enabled 匹配处于可用状态的元素
+		   E:disabled.......不可用........
+		   E:checked匹配处于选中状态的元素radio
+		   E::selection匹配E元素中被用户选中或者处于高亮状态的部分
+		   E:focus匹配处于焦点状态的元素
+		   */
+		  /* 否定选择器
+		    E:not(s)
+		   */
+		</style>
+	</head>
+	<body>
+		<div class="dfg hh">11111</div>
+		<p>22222</p>
+		<p>333333</p>
+		<div class="asd">
+			<p class="fgh">444444</p>
+		</div>
+		<input type="tel" name="" id="" value="" />
+		<input type="text" name="" id="" value="" />
+		<input type="datetime-local" name="" id="" value="" />
+		
+	</body>
+</html>

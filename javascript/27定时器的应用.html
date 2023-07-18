@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box1{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: absolute;
+				left: 0;
+			}
+			#box2{
+				top: 150px;
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+				position: absolute;
+				left: 0;
+			}
+			.cla{
+				height: 500px;
+				left: 800px;
+				border-left: 1px solid black;
+				width: 0px;
+				position: absolute;
+			}
+		</style>
+		<script type="text/javascript">
+		    var timer;
+		    function move(obj,target,speed,attr,callback){
+				clearInterval(obj.timer);
+				var lt=parseInt(getComputedStyle(obj,null)[attr])+speed+"px"; 
+				if(parseInt(lt)>target){
+					speed=-speed;
+				}
+				obj.timer=setInterval(function(){
+					lt=parseInt(getComputedStyle(obj,null)[attr])+speed+"px"; 
+					if(parseInt(lt)>target&&speed>0||speed<0&&parseInt(lt)<target){
+						lt=target+"px";
+					}
+					obj.style[attr]=lt;
+					if(parseInt(lt)==target){
+						clearInterval(obj.timer);
+						callback && callback();
+					}
+				},30);
+			}
+			window.onload=function(){
+				var box1=document.getElementById("box1");
+				var btn1=document.getElementById("btn1");
+				var btn2=document.getElementById("btn2");
+				var btn3=document.getElementById("btn3");
+				var btn4=document.getElementById("btn4");
+				var btn5=document.getElementById("btn5");
+				var btn6=document.getElementById("btn6");
+				var btn7=document.getElementById("btn7");
+				
+				var sleep=15;
+				btn1.onclick=function(){
+					move(box1,800,15,"left");
+				};
+				btn2.onclick=function(){
+				    move(box1,0,10,"left");
+				};
+				btn3.onclick=function(){
+					move(box1,20,10,"top");
+				};
+				btn4.onclick=function(){
+				    move(box1,600,10,"top");
+				};
+				btn5.onclick=function(){
+					move(box2,800,10,"left");
+				};
+				btn6.onclick=function(){
+				    move(box2,0,10,"left");
+				};
+				btn7.onclick=function(){
+				    move(box2,800,10,"width",function(){
+						move(box2,300,10,"height",function(){
+							move(box2,0,10,"top",function(){
+								move(box2,50,10,"width",function(){
+									move(box2,100,10,"height");
+								} );
+							} );
+						} );
+					});
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<button id="btn1">box1向右移动</button>
+		<button id="btn2">box1向左移动</button>
+		<button id="btn3">box1向上移动</button>
+		<button id="btn4">box1向下移动</button>
+		<button id="btn5">box2向右移动</button>
+		<button id="btn6">box2向左移动</button>
+		<button id="btn7">box2动画</button>
+		<div id="box1">兔子</div>
+		<div id="box2">乌龟</div>
+		<div class="cla"></div>
+	</body>
+</html>

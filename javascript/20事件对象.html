@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#areaDiv{
+				width: 300px;
+				height: 100px;
+				border: 1px solid black; 
+			}
+			#showMsg{
+				width: 300px;
+				height: 30px;
+				line-height: 30px;
+				border: 1px solid black;
+				margin: 5px 0;
+			}
+			#box{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				/* 开启绝对定位 */
+				position: absolute;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var areadiv=document.getElementById("areaDiv");
+				var showmsg=document.getElementById("showMsg");
+				// onmousemove 该事件会在鼠标在元素中移动时被触发
+				// 当事件被触发时浏览器会传递一个实参，
+				// clientX返回鼠标在浏览器的水平位置
+				// clientY返回鼠标在浏览器的垂直位置
+				areadiv.onmousemove=function(event){
+					showmsg.innerHTML="x="+event.clientX+",y="+event.clientY;
+					
+				};
+				
+				var box=document.getElementById("box");
+				document.onmousemove=function(event){
+					 event=event||window.event;
+					// pageX pageY获取鼠标相对于当前页面的坐标
+					// document.body.scrollTop||document.documentElement.scrollTop;
+					box.style.top=event.pageY+"px";
+					box.style.left=event.pageX+"px";
+				};
+				
+				var sb=document.getElementById("sb");
+				sb.onclick=function(){
+					alert("sadf");
+					
+				}
+				sb.onmousemove=function(event){
+					event.cancelBubble=true;
+				};
+			};
+		</script>
+	</head>
+	<body style="height: 1000px;">
+		<div id="areaDiv">
+			<button type="button" id="sb">asd</button>
+		</div>
+		<div id="showMsg"></div>
+		
+		<div id="box"></div>
+		
+	</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+				width: 100%;
+			}
+			.drawer{
+				background-color: yellow;
+				width: 300px;
+				height: 800px;
+			}
+			@keyframes mymove{
+				from{opacity: 0;
+					transform: translateX(-300px);}
+				to{
+					opacity: 1;
+					transform: translateX(0px);
+				}
+			}
+			.zhuhui-enter{
+				animation: mymove 1s;
+			}
+			.zhuhui-leave{
+				animation: mymove 1s reverse;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"  style="width: 300px;">
+			<nabbar>
+				<template #a>
+					nabbar
+					<button type="button" @click="isShow=!isShow">Drawer</button>
+				</template>
+				
+			</nabbar>
+			<transition enter-active-class="zhuhui-enter" leave-active-class="zhuhui-leave">
+				<drawer-bar v-show="isShow">
+				
+			    </drawer-bar>
+			</transition>
+			
+		</div>
+		<script type="text/javascript">
+		      var bus=new Vue();
+			Vue.component("nabbar",{
+				template:`
+				<div>
+				    <slot name="a"></slot>
+				</div>
+				`
+			})
+			Vue.component("drawerBar",{
+				template:`
+				<div class="drawer">
+				   <ul>
+				      <li>首页</li>
+					  <li>购物车</li>
+					  <li>我的</li>
+				   </ul>
+				</div>
+				`,
+					
+			})
+			new Vue({
+				el:"#box",
+				data:{
+					isShow:false,
+					left:300,
+				},
+				methods:{
+				}
+			})
+		</script>
+	</body>
+</html>

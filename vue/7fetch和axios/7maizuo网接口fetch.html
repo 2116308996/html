@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<div id="box">
+			<button @click="handleFecth()">ajax-fetch</button>
+			<ul>
+				<li v-for="(item,index) in datalist">{{item.name}}
+				<img :src="item.poster" alt="">
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el:"#box",
+				data:{
+					datalist:[]
+				},
+				methods:{
+					handleFecth(){
+						 fetch("./maizuo.json").then(res=>{
+							return res.json()
+						})
+						.then(res=>{
+							console.log(res);
+							this.datalist=res.data.films;
+						})
+						.catch(err=>{
+							console.log(err)
+						})
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

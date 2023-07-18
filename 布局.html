@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>布局</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			html,body{
+				height: 100%;
+			}
+			.boxleft{
+				width: 200px;
+				height: 100%;
+				background: yellow;
+				float: left;
+			}
+			.boxright{
+				height: 100%;
+				background: skyblue;
+			    margin-left: 200px;
+			}
+			.boxleft1{
+				width: 200px;
+				height: 100%;
+				background: yellow;
+				float: left;
+			}
+			.boxright1{
+				height: 100%;
+				background: skyblue;
+				width: calc(100% - 200px);
+				float: left;
+			}
+			.boxleft2{
+				width: 200px;
+				height: 100%;
+				background:gray;
+				float: left;			
+			}
+			.boxcenter2{
+				background: red;
+				height: 100%;
+				width: calc(100% - 400px);
+				float: left;
+				overflow: auto;
+			}
+			.boxright2{
+				height: 100%;
+				background: skyblue;
+				width: 200px;
+				float: left;
+				top:0;
+			}
+			.x{
+				width: 50px;
+				height: 300px;
+				background-color: #0000FF;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 两栏布局 -->
+		<div class="boxleft"></div>
+		<div class="boxright"></div>
+		<br>
+		<hr><br>
+		<div class="boxleft1"></div>
+		<div class="boxright1"></div>
+		<hr><br>
+		<!-- 三栏布局 -->
+		<div class="boxleft2"></div>
+		<div class="boxcenter2">
+			<div class="x"></div>
+			<div class="x"></div>
+			<div class="x"></div>
+			<div class="x"></div>
+			<div class="x"></div>
+			<div class="x" style="background: black;"></div>
+		</div>
+		<div class="boxright2"></div>
+	</body>
+</html>

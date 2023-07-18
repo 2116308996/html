@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+		.divv{
+			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+			.box{
+				
+			}
+		</style>
+		<script type="text/javascript">
+			var arr=new Array();
+			var obj={name:"孙悟空"};
+			var abb=[1,"hello",null,undefined,true,obj];
+			arr[0]=10;
+			arr[arr.length]=11;
+			// push()在数组后添加元素 pop()在数组后删除一个元素(影响原数组)
+			 // unshhift()向数组开头添加元素，并返回长度
+			// shift()删除数组的第一个元素 (影响原数组)
+			// slice(start,end) 选取数组中的一段元素并返回
+			// splice(start,count,arr)删除原数组中一段元素并返回被删除的数组 
+			// 开始位置 删除数量 插入的新数组 (影响原数组)
+			// concat()链接两个或多个数组并返回结果
+			// join(",")把数组链接成字符串并返回 连接符
+			// reverse();反转原数组,(影响原数组)
+			
+			//set
+			
+			// sort()默认按Unicode排序 (影响原数组)
+			// sort(function(a,b){
+				// return a-b;
+			// }
+			// )
+			// 返回大于值0交换位置 小于等于0位置不变
+			// for(var i in abb){
+			// 	console.log(abb[i]); 
+			// }
+			// forEach(function(value,b,c){
+				// 
+			// } )
+			// value正在遍历的元素 b正在遍历的元素的索引
+			// c正在遍历的数组
+			abb.forEach(function(a){
+				console.log(a);
+			}
+			)
+		</script>
+	</head>
+	<body>
+		<div style="width: 300px;height: 300px;background-color: yellow;" class="divv">
+			<div style="width: 100px;height: 100px; background-color: red;" class="box">
+				
+			</div>
+		</div>
+	</body>
+</html>

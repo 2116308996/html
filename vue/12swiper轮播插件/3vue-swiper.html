@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../node_modules/swiper/swiper-bundle.min.css"/>
+		<script src="../node_modules/swiper/swiper-bundle.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.zhuhui{
+				height: 500px;
+				width: 800px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>导航栏</header>
+		<div id="box">
+			<div class="swiper zhuhui" :key="datalist.length">
+			    <div class="swiper-wrapper">
+					<div class="swiper-slide" v-for="item in datalist" :key="item">
+						<img :src="item" style="height: 500px;" alt="">
+					</div>
+			    </div>
+			    <!-- 如果需要分页器 -->
+			    <div class="swiper-pagination"></div>
+			    
+			    <!-- 如果需要导航按钮 -->
+			    <div class="swiper-button-prev"></div>
+			    <div class="swiper-button-next"></div>
+			    
+			    <!-- 如果需要滚动条 -->
+			   <!-- <div class="swiper-scrollbar"></div>  -->
+			</div>
+		</div>
+		
+		<footer>底部内容</footer>
+		<script type="text/javascript">
+
+		   var vm= new Vue({
+				el:"#box",
+				data:{
+					datalist:[]
+				},
+				mounted() {
+					
+					setTimeout(()=>{
+						this.datalist=["../../image/1.jpg","../../image/2.jpg","../../image/3.jpg"];
+					},100)
+					init();
+				},
+				updated() {
+					// 销毁swiper
+					myswiper.destroy(true,true);
+					init();
+				}
+			})
+			
+			// 初始化swiper
+			var myswiper;
+			function init(){
+				    myswiper= new Swiper(".zhuhui", {
+					//direction: 'vertical', // 垂直切换选项
+					loop: true, // 循环模式选项
+					
+					//如果需要分页器
+					pagination: {
+					  el: '.swiper-pagination',
+					},
+					 
+					// 如果需要前进后退按钮
+					navigation: {
+					  nextEl: '.swiper-button-next',
+					  prevEl: '.swiper-button-prev',
+					},
+					
+					// 自动切换
+					 autoplay: {
+					          delay: 2500,
+					          disableOnInteraction: false,
+					        },
+					
+					// 如果需要滚动条
+					// scrollbar: {
+					//   el: '.swiper-scrollbar',
+					// },
+				})
+			}
+			/*
+			 1无法复用
+			 2其他状态更新后，swiper会初始化多次导致bug
+			*/ 
+		</script>
+	</body>
+</html>

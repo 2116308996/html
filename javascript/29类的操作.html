@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.b1{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+			.b2{
+				width: 200px;
+				height: 200px;
+				background-color: yellow;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var box=document.getElementById("box");
+				var btn1=document.getElementById("btn1");
+				var btn2=document.getElementById("btn2");
+				var b2=document.getElementsByClassName("b2");
+				btn1.onclick=function(){
+					box.style.transition="all 3s linear 0s";
+					// box.className="b2";
+					// box.className+=" b2";
+					addclass(box,"b2");
+				}
+				btn2.onclick=function(){
+					 removeclass(box,"b2");
+					// toggleClass(box,"b2");
+				}
+				// 用来向元素中添加指定class样式
+				function addclass(obj,cn){
+					if(!hasclass(obj,cn)){
+						obj.className+=" "+cn;
+					}
+				};
+				// 判断是否有指定class
+				function hasclass(obj,cn){
+					var reg=new RegExp("\\b"+cn+"\\b");
+					 return reg.test(obj.className);
+				}
+				// 删除指定class
+				function removeclass(obj,cn){
+					var reg=new RegExp("\\b"+cn+"\\b");
+					obj.className=obj.className.replace(reg,"");
+				}
+				// 切换一个类 如果有则删除，如果没有则添加
+				function toggleClass(obj,cn){
+					if(hasclass(obj,cn)){
+						removeclass(obj,cn);
+					}else{
+						addclass(obj,cn);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button type="button" id="btn1">点击按钮修改样式</button>
+		<button type="button" id="btn2">删除b2</button>
+		<br><br>
+		<div id="box" class="b1"></div>
+	</body>
+</html>

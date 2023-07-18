@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>轮播案例</title>
+		<style type="text/css">
+		    *{
+				margin: 0;
+				padding: 0;
+			}
+			.swiper-container{
+				margin: 0 auto;
+				height: 428px;
+				width: 600px;
+				position: relative;
+				border: 2px solid black;
+				overflow: hidden;
+			}
+			@keyframes mymove{
+				0%{transform: translateX(0);}
+				10%{transform: translateX(-600px);}
+				25%{transform: translateX(-600px);}
+				35%{transform: translateX(-1200px);}
+				50%{transform: translateX(-1200px);}
+				60%{transform: translateX(-1800px);}
+				75%{transform: translateX(-1800px);}
+				85%{transform: translateX(-2400px);}
+				100%{transform: translateX(-2400px);}
+			}
+			.swiper-wrapper{
+				width:3000px;
+				position: absolute;
+				animation: mymove 4s linear infinite;
+			}
+			.swiper-wrapper:hover{
+				animation-play-state: paused;
+			}
+			.swiper-slide img{
+				width: 100%;
+			}
+			.swiper-slide{
+				width: 600px;
+				box-sizing: border-box;
+				border: 1px solid gainsboro;
+				padding: 10px;
+				float: left;
+			}
+			.swiper-slide p{
+				position: absolute;
+			}
+			@keyframes box{
+				0%{}
+				25%{background-position: -150px 0;}
+				50%{background-position: -300px 0;}
+				75%{background-position: -450px 0;}
+				100%{background-position: -600px 0;}
+			}
+			.box{
+				width: 150px;
+				height: 424px;
+				background: url(../image/21.jpg);
+				background-size: cover;
+				animation: box 4s linear infinite ;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<p>1</p>
+					<img src="../image/21.jpg" alt=""></div>
+				<div class="swiper-slide">
+					<p>2</p>
+					<img src="../image/21.jpg" alt=""></div>
+				<div class="swiper-slide">
+					<p>3</p>
+					<img src="../image/21.jpg" alt=""></div>
+				<div class="swiper-slide">
+					<p>4</p>
+					<img src="../image/21.jpg" alt=""></div>
+				<div class="swiper-slide">
+					<p>1</p>
+					<img src="../image/21.jpg" alt=""></div>
+			</div>
+		</div>
+		<div class="box"></div>
+	</body>
+</html>

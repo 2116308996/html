@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>三角形和垂直居中</title>
+		<style type="text/css">
+		    *{
+				margin: 0;
+				padding: 0;
+			}
+			.box1{
+				width: 0px;
+				height: 0px;
+				/* background-color: red; */
+				border-right:rgba(0,0,0,0) 5px solid ;
+				border-bottom:rgba(0,0,0,0) 5px solid ;
+				border-top:black 5px solid ;
+				border-left: rgba(0,0,0,0) 5px solid;
+				display: inline-block;
+				position: relative;
+				top:2.5px;
+			}
+			.ul1{
+				width: 360px;
+				height: 50px;
+				margin: 0 auto;
+			}
+			.ul1 li{
+				width: 120px;
+				height: 50px;
+				float: left;
+				list-style: none;
+				background: royalblue;
+				text-indent: 30px;
+				line-height: 50px;
+				color: white;
+			}
+			.ul1 li:hover{
+				background: white;
+				color: black;
+			}
+			.ul1 li:hover .box1{
+				top:-2.5px;
+				border-bottom:blue 5px solid ;
+				border-top:rgba(0,0,0,0) 5px solid ;
+			}
+			.box2{
+				width: 500px;
+				height: 500px;
+				background-color: red;
+				margin: 0 auto;
+				position: relative;
+			}
+			.box3{
+				width: 200px;
+				height: 200px;
+				background-color: #00FFFF;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -100px;
+				margin-left: -100px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="ul1">
+			<li>导航
+			<div class="box1"></div>
+			</li>
+			<li>导航</li>
+			<li>导航</li>
+		</ul>
+		<div class="box2">
+			<div class="box3"></div>
+		</div>
+	</body>
+</html>

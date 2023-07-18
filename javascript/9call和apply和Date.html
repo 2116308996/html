@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+		<script type="text/javascript">
+			// function A(){};
+			// function B(a){
+			// 	this.a=a;
+			// };
+			// function C(a){
+			// 	if(a){
+			// 		this.a=a;
+			// 	}
+			// };
+			// var obj1=new A();
+			// var obj2=new B();
+			// var obj3=new C();
+			// A.prototype.a=1;
+			// B.prototype.a=1;
+			// C.prototype.a=1;
+			// console.log(obj3.a);
+			function fun(a,b){
+				alert(this);
+				return a+b;
+			}
+			var obj={
+				name:"obj",
+				sayName:function(){
+					console.log(this.name);
+				}
+			};
+			var obj2={
+				name:"obj2"
+			}
+			// fun.apply(); 可以将一个对象指定为第一参数
+			// 对象将会成为this
+			// call方法可以将实参在对象之后一次传递
+			// apply方法需要将实参封装到数组中传递
+			// fun.call(obj,2,3);  
+			 // fun.apply(obj,[2,3]);
+			obj.sayName.apply(obj2);
+			// arguments类数组对象 
+			// 在调用函数时,实参都会在arguments中保存,可以使用索引获取
+		    var date1=new Date();
+			var date2=new Date("12/03/2022 11:45:30");
+			var date=date1.getMonth();
+			console.log(date);
+			// var date=Date.now();获取时间戳
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

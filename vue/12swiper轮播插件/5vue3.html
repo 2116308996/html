@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../node_modules/vue/dist/vue.global.prod.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../node_modules/swiper/swiper-bundle.min.css"/>
+		<script src="../node_modules/swiper/swiper-bundle.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<style type="text/css">
+			.zhuhui{
+				height: 500px;
+				width: 800px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			{{myname}}
+			<nav-bar :myname="myname">
+				<div>11111</div>
+			</nav-bar>
+			<side-bar></side-bar>
+		</div>
+		<script type="text/javascript">
+		    
+			var obj={
+				
+				data() {
+					return{
+						myname:"zhuhui"
+					}
+				},
+				methods:{
+					
+				},
+				computed:{
+					
+				},
+				created() {
+					console.log("created")
+				},
+				mounted() {
+					console.log("mounted")
+				},
+				// 生命周期销毁换成了unmounted
+				// beforeDestroy() {
+				// 	console.log("beforeDestroy")
+				// },
+				// destroyed() {
+				// 	console.log("destroy")
+				// }
+				beforeUnmount() {
+					console.log("beforeUnmount")
+				},
+			    unmounted(){
+					console.log("unmount")
+				}
+			};
+			
+			/*
+			Vue.createApp(obj)
+			    .component("nav-bar",{
+					props:["myname"],
+				    template:`
+				    <div>navbar{{myname}}</div>
+					<slot></slot>
+				    `
+			    })
+				.mount("#box");
+				
+			*/
+			var app=Vue.createApp(obj)	;
+			app.component("nav-bar",{
+					props:["myname"],
+				    template:`
+				    <div>navbar{{myname}}</div>
+					<slot></slot>
+				    `,
+					component:{
+						
+					}
+			    });
+			app.component("side-bar",{
+				template:`
+				<div>sidebar</div>
+				<slot></slot>
+				<minbar></minbar>
+				`,
+				components:{
+					"minbar":{
+						template:`
+						<div>minbar</div>
+						`
+					}
+				}
+			});
+			app.mount("#box");
+		</script>
+	</body>
+</html>

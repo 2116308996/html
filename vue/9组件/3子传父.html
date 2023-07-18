@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../hello/js/v3.2.8/vue.global.prod.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+		    *{
+				margin: 0;
+				padding: 0;
+			}
+			.sidebar li{
+				width: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<navbar @myevent="handleEvent"></navbar>
+		    <sidebar v-show="isShow"></sidebar>
+		</div>
+		
+		<script type="text/javascript">
+		    Vue.component("navbar",{
+				props:{
+				},
+				template:`
+				<div style="background-color: red;">
+				    <button type="button" @click="handleClick()">侧边栏</button>
+					<span>导航栏</span>
+				</div>
+				`,
+				methods:{
+					handleClick(){
+						this.$emit("myevent",1000)
+					}
+				}
+			})
+		    Vue.component('sidebar',{
+				template:`
+				<div style="background-color: yellow;" >
+					<ul style="list-style: none;">
+						<li>asfasf</li>
+						<li>adsaf</li>
+						<li>asfsdfgsgasf</li>
+					</ul>
+				</div>
+				`,
+			});
+			new Vue({
+				el:"#box",
+				data:{
+						isShow:true,
+					},
+				methods:{
+					handleEvent(data){
+						this.isShow=!this.isShow;
+						console.log(data);
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
