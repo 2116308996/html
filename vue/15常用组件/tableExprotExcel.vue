@@ -4,6 +4,9 @@
 <script src="~/lib/sheetjs/dist/XLSXS.js" asp-append-version="true"></script>
     <script src="~/lib/sheetjs/dist/xlsx.extendscript.js" asp-append-version="true"></script>
 <script>
+	//vue3
+	import * as XLSX from 'xlsx'
+	import XLSXS from 'xlsx-js-style'
 	export default{
 		data(){
 			return{
@@ -68,7 +71,9 @@
 			                }
 			            }
 			            wb.Sheets.Sheet1=this.addRangeBorder(wb['Sheets']['Sheet1']['!merges'],wb['Sheets']['Sheet1'])
-			              //XLSXS.writeFile(wb, '一会管理统计表.xlsx')  //vue3
+			              //const wbb = XLSX.utils.book_new();
+			              //XLSX.utils.book_append_sheet(wbb, wb, "data");
+						  //XLSXS.writeFile(wbb, '一会管理统计表.xlsx')  //vue3
 			            var wbout = XLSXS.write(wb, {
 			                bookType: "xlsx",
 			                bookSST: false,
@@ -115,6 +120,7 @@
 			            for (var i = 0; i != s.length; ++i) view[i] = s.charCodeAt(i) & 0xFF;
 			            return buf;
 			        },
+					 
 		}
 	}
 </script>

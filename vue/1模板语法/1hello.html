@@ -19,6 +19,22 @@
 			
 		</div>
 		<script type="text/javascript">
+			var x=0;y=0;max=20000;
+			for(var i=0;i<max;i++){
+				var a=Math.round(Math.random()*10);
+				if(y==1){
+					x++
+					y=0
+				}else{
+					if(a>=0&&a<5){
+						x++
+					}
+					if(a>5&&a<=10){
+						y=1
+					}
+				}
+			}
+			console.log(x/max)
 			var vm=new Vue({
 				     el:"#box",
 			         data:{
