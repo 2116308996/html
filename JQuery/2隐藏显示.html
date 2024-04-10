@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="../vue/jquery.js"></script>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			$(document).ready(()=>{
+				$("button#toggle").click(()=>{
+					$("div").toggle()
+				})
+				$("#hide").click(()=>{
+					$("#toggle").hide()
+				})
+				$("#show").click(()=>{
+					$("#toggle").show()
+				})
+				$("button#speed").click(()=>{
+					$("div").toggle(1000)
+					$("div").hide(1000)
+				})
+				
+				$("#slideToggle").click(()=>{
+					$("#slideTogglediv").slideToggle()
+				})
+				$("#slideToggle2").click(()=>{
+					$("#slideTogglediv").slideToggle(3000)
+				})
+			})
+			  //淡入淡出
+			  //  fadeIn()
+			   // fadeOut()
+			   // fadeToggle()
+			   // fadeTo()
+			   //透明度变化
+                //$("#div1").fadeTo("slow",0.15);
+				
+				
+				  // 滑动方法
+				  // slideDown()
+				  // slideUp()
+				  // slideToggle()
+
+		</script>
+	</head>
+	<body>
+		<div id="toggle">
+			1111111
+		</div>
+		<div id="hide">
+			hide
+		</div>
+		<div id="show">
+            show
+		</div>
+		<button id="toggle" type="button">toggle</button>
+		<button id="speed" type="button">speed</button>
+	
+	    <div id="slideToggle2" style="width: 500px;height: 30px;background-color: red;line-height: 30px;text-align: center">
+		    隐藏/显示
+	    </div>
+	    <div id="slideTogglediv" style="width: 500px;height: 200px;background-color: antiquewhite;">
+			十大大苏打
+		</div>
+		<div id="slideToggle" style="width: 500px;height: 30px;background-color: red;line-height: 30px;text-align: center">
+			隐藏/显示
+		</div>
+	</body>
+</html>

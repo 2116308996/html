@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="../vue/jquery.js"></script>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			$(document).ready(()=>{
+				$("button#btn1").click(()=>{
+					alert($("div#div1").text()) 
+				})
+				$("button#btn2").click(()=>{
+					alert($("div#div1").html()) 
+				})
+				$("#btn3").click(()=>{
+					alert($("#test").val())
+				})
+				$("#btn4").click(()=>{
+					alert($("#test").attr('type'))
+				})
+				$("#btn5").click(()=>{
+					$("#div1").text('Hello world!')
+				})
+				$("#btn6").click(()=>{
+					$("#div1").html('<b>Hello world!</b>')
+				})
+				$("#btn7").click(function(){
+				  $("#test").val(()=>{
+					  return "dsads"
+				  });
+				});
+				$("#btn8").click(()=>{
+					//$("#a1").attr("href","https://www.w3school.com.cn/jquery/index.asp")
+					$("#a1").attr({"href":"https://www.w3school.com.cn/jquery/index.asp",
+					"title":()=>{
+						return "w3school.com.cn/jquery"
+					}})
+					$("#a1").text("w3school.com.cn/jquery")
+				})
+			})
+			//jQuery attr() 方法用于获取属性值。
+		</script>
+	</head>
+	<body>
+		<div id="div1"><span style="background-color: aqua;">你好</span>Tim</div>
+		<button id="btn1">显示文本</button>
+		<button id="btn2">显示HTML</button>
+		
+		<p>姓名：<input type="text" id="test" value="米老鼠"></p>
+		<button id="btn3">显示值</button>
+		
+		<button id="btn4">获取属性值</button>
+		<button id="btn5">设置内容text</button>
+		<button id="btn6">设置内容html</button>
+		<button id="btn7">设置值value</button>
+		
+		<p><a id="a1" href="http://www.w3school.com.cn" id="w3s">W3School.com.cn</a></p>
+		<button id="btn8">改变 href 值</button>
+	</body>
+</html>

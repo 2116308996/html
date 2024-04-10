@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="../vue/jquery.js"></script>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			$(document).ready(()=>{
+				$("#btn1").click(()=>{
+					$("#div1 p").append("add")
+				})
+				$("#btn2").click(()=>{
+					$("#div2 ol").append("<li>listadd</li>")
+				})
+				$("#btn3").click(()=>{
+					$("#div1 p").prepend("add")
+				})
+				$("#btn4").click(()=>{
+					$("#div1").before(()=>{
+						return "<b>before</b>"
+					})
+				})
+				$("#btn5").click(()=>{
+					$("#div2").after("<p>after</p>","<p>after</p>")
+				})
+				$("#btn6").click(()=>{
+					$("#div1 p").remove(".italic")
+				})
+			})
+		 //	jQuery after() 方法在被选元素之后插入内容	
+		 //	jQuery before() 方法在被选元素之前插入内容
+		
+		 // remove() - 删除被选元素（及其子元素）
+		 // empty() - 从被选元素中删除子元素
+		 
+		 
+		 //    addClass() - 向被选元素添加一个或多个类
+		 //    removeClass() - 从被选元素删除一个或多个类
+		 //    toggleClass() - 对被选元素进行添加/删除类的切换操作
+		//     css() - 设置或返回样式属性
+
+//jQuery 提供多个处理尺寸的重要方法：
+
+ //   width()
+  //  height()
+ //   innerWidth()
+  //  innerHeight()
+  //  outerWidth()
+ //   outerHeight()
+
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<p class="italic">wqeqwewqe</p>
+			<p>wqeqwewqe</p>
+		</div>
+		<div id="div2">
+			<ol>
+				<li>1sdsada</li>
+				<li>1sdsada</li>
+				<li>1sdsada</li>
+			</ol>
+		</div>
+		<div>
+			<button id="btn1">文本追加</button>
+			<button id="btn2">列表追加</button>
+			<button id="btn3">文本前面添加</button>
+			
+			<button id="btn4">before</button>
+			<button id="btn5">after</button>
+			<button id="btn6">删除</button>
+		</div>
+	</body>
+</html>

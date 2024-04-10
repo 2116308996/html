@@ -1,7 +1,7 @@
 <template>
 </template>
 
-<script src="~/lib/sheetjs/dist/XLSXS.js" asp-append-version="true"></script>
+    <script src="~/lib/sheetjs/dist/XLSXS.js" asp-append-version="true"></script>
     <script src="~/lib/sheetjs/dist/xlsx.extendscript.js" asp-append-version="true"></script>
 <script>
 	//vue3
@@ -53,6 +53,7 @@
 			                wb.Sheets.Sheet1[key].s = {
 			                    alignment: {
 			                        horizontal: 'center',
+									vertical:'center'
 			                    },
 			                    border: {
 			                        top: {

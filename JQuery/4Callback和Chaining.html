@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../vue/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("button#btn1").click(function(){
+  $("p#p1").hide(1000,()=>{$("p#p2").hide(1000)});
+  });
+  
+  $("button#btn2").click(function(){
+      $("#p3").css("color","red").slideUp(2000).slideDown(2000);
+    });
+});
+</script>
+</head>
+<body>
+<button id="btn1" type="button">隐藏</button>
+<p id="p1">这是一个段落。</p>
+<p id="p2">这是另一个段落。</p>
+
+<p id="p3">jQuery 乐趣十足！</p>
+<button id="btn2">点击这里</button>
+</body>
+</html>

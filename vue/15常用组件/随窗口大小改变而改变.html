@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="box">
+			<div class="box1"></div>
+			<div class="box2"></div>
+			<div class="box3"></div>
+		</div>
+	</body>
+	<script>
+		window.onresize = () => {
+			var baseWidth = 1920;
+			var browerWidth = window.innerWidth;
+			var zoomValue = browerWidth / baseWidth;
+			document.getElementsByClassName("box")[0].style.transform =
+				"scale(" + zoomValue + "," + zoomValue + ")";
+		}
+
+		function text() {
+			var x = [1, 2, 3, 4]
+			var x2 = x.map(item => {
+				if (item % 2 == 0) {
+					return item * 2
+				}else{
+					return 0
+				}
+			})
+			console.log(x2)
+		}
+		text()
+	</script>
+</html>
+<style>
+	body {
+		margin: 0;
+		padding: 0;
+	}
+
+	.box {
+		width: 1920px;
+		height: 500px;
+		background-color: yellow;
+		transform-origin: 0 0;
+	}
+
+	.box1 {
+		float: left;
+		background-color: blue;
+		width: 600px;
+		height: 300px;
+	}
+
+	.box2 {
+		float: left;
+		width: 600px;
+		background-color: red;
+		height: 400px;
+	}
+
+	.box3 {
+		background-color: antiquewhite;
+		width: 600px;
+		float: left;
+		height: 500px;
+	}
+</style>

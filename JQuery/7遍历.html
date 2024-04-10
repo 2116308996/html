@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="../vue/jquery.js"></script>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			let mediaStream; // 音频流
+			let recorder; // 录音器
+			let chunks = [];
+
+			// 获取用户媒体设备（麦克风）
+			navigator.mediaDevices.getUserMedia({
+					audio: true
+				})
+				.then(stream => {
+					mediaStream = stream;
+					let startButton = document.getElementById('start1'); // 开始录音
+					startButton.disabled = false;
+					console.log('成功获取音频输入源')
+				})
+				.catch(err => {
+					console.log('无法获取音频输入源', err);
+				});
+
+			function vTot() {
+				console.log($("#input1").val())
+				var spt = new SpeechSynthesisUtterance($("#input1").val())
+				var syn = window.speechSynthesis;
+				/* spt.onstart=function(event){
+					console.log("start")
+				}
+				spt.onend=function(event){
+					console.log("end")
+				}
+				spt.onpause=function(event){
+					console.log("pause")
+				}
+				spt.onresume=function(event){
+					console.log("onresume")
+				}
+				spt.onboundary=function(event){
+					console.log("onboundary")
+				} */
+				syn.speak(spt);
+			};
+
+			function tTov() {
+				var rec = new window.SpeechRecognition();
+
+				/* rec.onstart=function(event){
+					console.log("start")
+				}
+				rec.onend=function(event){
+					console.log("onend")
+				} */
+
+				rec.start();
+				rec.onresult = function(event) {
+					console.log(event.results)
+				}
+			};
+
+			function click1() {
+				let startButton = document.getElementById('start1'); // 开始录音
+				let stopButton = document.getElementById('end1'); // 停止录音
+				let player = document.getElementById('player'); // 播放
+				// 获取音频流
+				recorder = new MediaRecorder(mediaStream);
+				// 处理音频数据
+				recorder.ondataavailable = (event) => {
+					if (event.data.size > 0) {
+						chunks.push(event.data);
+					}
+				};
+				// 完成录音
+				recorder.start();
+				// 停止录音
+				stopButton.disabled = false;
+				startButton.disabled = true;
+				console.log('开始录音...');
+			}
+
+			function click2() {
+				let startButton = document.getElementById('start1'); // 开始录音
+				let stopButton = document.getElementById('end1'); // 停止录音
+				let player = document.getElementById('player'); // 播放
+				// 停止录音
+				recorder.stop();
+
+				startButton.disabled = false;
+				stopButton.disabled = true;
+
+				recorder.onstop = () => {
+					console.log('录音已停止');
+					// 音频类型 ogg webm mp3
+					const blob = new Blob(chunks, {
+						type: 'audio/mp3; codecs=opus'
+					});
+					// 将录音设置为可播放
+					const url = URL.createObjectURL(blob);
+					player.src = url;
+
+				/* 	let href = URL.createObjectURL(blob);
+					let downA = document.createElement("a");
+					downA.href = href;
+					downA.download = "fileName";
+					downA.click();
+					// 销毁超连接
+					window.URL.revokeObjectURL(href); */
+					console.log('尝试播放录音');
+				}
+			}
+			$(document).ready(() => {
+				$("#start1").click();
+				$("#end1").click()
+			})
+		</script>
+	</head>
+	<body>
+		<div>
+			<input id="input1" type="text">
+			<button id="but1" onclick="vTot()">文字转语音</button>
+			<button id="start1" onclick="click1()">开始录音</button>
+			<button id="end1" onclick="click2()">结束录音</button>
+			<audio controls id="player"></audio>
+			<button id="but2" onclick="tTov()">语音转文字</button>
+		</div>
+	</body>
+</html>

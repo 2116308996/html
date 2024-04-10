@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="../vue/jquery.js"></script>
+		<script type="text/javascript" src="../vue/vue.js"></script>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			function aaa(){
+				$("#animation1").animate({
+					left: '200px',
+					opacity: '0.5',
+					height: '150px',
+					width: '+=150px'
+				},1000)
+				.animate({
+					height:'200px',
+					width:'200px',
+					opacity:'1',
+					left:'0'
+				},2000,aaa)
+				
+				$('#box').animate({
+				  width: '200px',
+				  height: '200px',
+				  left: '50px', // 向右移动元素的一半宽度
+				  bottom: '-50px' // 向上移动元素的一半高度，使其左下角保持不变
+				}, 1000);
+			}
+			$(document).ready(() => {
+				//只触发一次
+				//$("#start1").one('click',aaa);
+				$("#start1").click(aaa)
+				$("#start2").click(()=>{
+					$("#animation1").stop(true)
+				}) 
+			})
+			console.log(2+"5"*1)
+		//	您甚至可以把属性的动画值设置为 "show"、"hide" 或 "toggle"：
+		//	height:'toggle'
+		
+		//$(selector).stop(stopAll,goToEnd);
+		//可选的 stopAll 参数规定是否应该清除动画队列。默认是 false，即仅停止活动的动画，允许任何排入队列的动画向后执行。
+		
+		//可选的 goToEnd 参数规定是否立即完成当前动画。默认是 false。
+		</script>
+	</head>
+	<body>
+		<button id="start1">开始动画</button>
+		<button onclick="aaa()">开始动画</button>
+		<button id="start2">停止动画</button>
+		<div id="animation1" style="position: relative; width: 200px;height: 200px;background-color: aqua;"></div>
+		<div id="box" style="position: relative; width: 100px;height: 100px;background-color: red;"></div>
+	</body>
+</html>

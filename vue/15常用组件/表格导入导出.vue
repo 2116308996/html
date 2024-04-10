@@ -18,6 +18,11 @@
 			console.log(arr)
 
 			var wb = XLSX.utils.json_to_sheet(arr)
+			
+			/* const wbb = XLSX.utils.book_new();
+			XLSX.utils.book_append_sheet(wbb, wb, "Sheet1");
+			wb = wbb */
+						
 			console.log(wb)
 
 			wb['!cols'] = [{

@@ -1,0 +1,13 @@
+vue-v-model 双向绑定-编辑弹框修改数据后页面数据跟着更改（取消弹框操作也已经被修改数据），利用 Object.assign解决对象引用同址问题
+https://www.cnblogs.com/zbbk/p/13731305.html
+
+Edit (item) {
+  let copy = Object.assign({}, item)
+  this.addData = copy
+  this.modal = true
+},
+//
+var type = $.query.get("inspectionType");
+
+
+new Date(y, 12, 0).getDate()  //获取12月有多少天
